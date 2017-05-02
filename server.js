@@ -15,9 +15,9 @@ app.use(express.static(path.join(__dirname, '/public')))
 //   cookie: {secure:false}
 // }))
 
-// app.use(bp.json())
+app.use(bp.json())
 require('./config/mongoose.js')
-// require('./config/routes.js')(app)
+require('./config/routes.js')(app)
 
 app.listen(8000, function() {
   console.log('listening to port 8000')
