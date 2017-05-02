@@ -6,7 +6,7 @@ var AutoSchema = new Schema({
   address: {type: String, required: true},
   phone_number: {type: String, required: true},
   email_address: {type: String, required: true},
-  previous_email: {type: String},
+  previous_address: {type: String},
   current_insurance: {type: String},
   company_name: {type: String},
   policy_expiration: {type: Date},
