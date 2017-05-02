@@ -16,8 +16,8 @@ app.use(express.static(path.join(__dirname, '/public')))
 // }))
 
 // app.use(bp.json())
-// require('./server/config/mongoose.js')
-// require('./server/config/routes.js')(app)
+require('./config/mongoose.js')
+// require('./config/routes.js')(app)
 
 app.listen(8000, function() {
   console.log('listening to port 8000')
