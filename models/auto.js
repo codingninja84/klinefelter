@@ -2,10 +2,10 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var AutoSchema = new Schema({
-  name: {type: String, required: true},
-  address: {type: String, required: true},
-  phone_number: {type: String, required: true},
-  email_address: {type: String, required: true},
+  name: {type: String},
+  address: {type: String},
+  phone_number: {type: String},
+  email_address: {type: String},
   previous_address: {type: String},
   current_insurance: {type: String},
   company_name: {type: String},

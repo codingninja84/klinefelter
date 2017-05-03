@@ -2,11 +2,11 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var CommercialSchema = new Schema({
-  contact_name: {type: String, required: true},
-  business_name: {type: String, required: true},
-  physical_address: {type: String, required: true},
+  contact_name: {type: String},
+  business_name: {type: String},
+  physical_address: {type: String},
   mailing_address: {type: String},
-  phone_number: {type: String, required: true},
+  phone_number: {type: String},
   alt_phone_number: {type: String},
   fax_number: {type: String},
   email_address: {type: String},

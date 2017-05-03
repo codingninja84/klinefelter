@@ -2,10 +2,10 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var HomeSchema = new Schema({
-  applicant_name: {type: String, required: true},
+  applicant_name: {type: String},
   applicant_bday: {type: Date},
-  applicant_phone_number: {type: String, required: true},
-  applicant_email_address: {type: String, required: true},
+  applicant_phone_number: {type: String},
+  applicant_email_address: {type: String},
   co_applicant_name: {type: String},
   co_applicant_bday: {type: Date},
   co_applicant_phone_number: {type: String},
