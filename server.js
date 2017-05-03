@@ -4,7 +4,7 @@ var path = require('path')
 var bp = require('body-parser')
 var session = require('express-session')
 
-app.use(express.static(path.join(__dirname, '/public')))
+app.use(express.static(path.join(__dirname, "./public/dist")));
 // app.use(express.static(path.join(__dirname, '/node_modules')))
 // app.use(express.static(path.join(__dirname, '/bower_components')))
 

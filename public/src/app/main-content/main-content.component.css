@@ -1,0 +1,16 @@
+.savings {
+  color: #ddd;
+  text-align: center;
+  width: 100vw;
+  background-color: #2C2B3C;
+}
+
+.quote a, i {
+  font-size: 3rem;
+  color: #2C2B3C;
+}
+
+i {
+  border: 2px solid red;
+
+}
