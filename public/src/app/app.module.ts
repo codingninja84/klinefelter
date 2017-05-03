@@ -14,6 +14,7 @@ import { CommercialComponent } from './main-content/quote/commercial/commercial.
 import { ChatComponent } from './main-content/chat/chat.component';
 import { BioComponent } from './bio/bio.component';
 import { BlogComponent } from './blog/blog.component';
+import { HeaderComponent } from './main-content/header/header.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { BlogComponent } from './blog/blog.component';
     CommercialComponent,
     ChatComponent,
     BioComponent,
-    BlogComponent
+    BlogComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

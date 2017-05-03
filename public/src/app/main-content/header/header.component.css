@@ -1,0 +1,116 @@
+p, h1, h2, h3 {
+  color: #ddd;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ui.grid+.grid {
+    margin-top: 0px;
+}
+
+.top-bar {
+  padding: 0px .25rem;
+  width: 100vw;
+  margin: 0px;
+}
+
+.social, .location {
+  text-align: center;
+}
+
+
+.compact {
+  height: 100%;
+}
+.four.wide.column.quote {
+  padding: 0;
+}
+
+.ib {
+  display: inline-block;
+}
+
+
+/*colors, fonts, backgrounds*/
+
+.hero {
+  position: relative;
+  text-align: center;
+  height: 100vh;
+  color: white;
+  background-image: url("/images/hero.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.logo {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.compact {
+  background-color: #2C2B3C;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.22rem;
+  font-weight: 400;
+  border-radius: 0px;
+}
+
+i, .contact a {
+  color: #ddd;
+}
+
+.social a {
+  color: #ddd;
+  font-size: 1.5rem;
+  vertical-align: bottom;
+}
+
+.social i:hover {
+  color: #2C2B3C;
+}
+
+.top-bar {
+  background-color: var(--purple);
+}
+
+.location, .contact {
+  font-size: 1rem;
+
+}
+
+.marker, .mail, .call, .comments {
+  color: #B7C3F3
+}
+
+
+.menu-div {
+  background: rgba(55,55,55,.29);
+  box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px 0px
+}
+
+.right a {
+  color: #8E94F2;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.22rem;
+  font-weight: 600;
+}
+
+.right a:hover, .active.item {
+  color: #2C2B3C;
+}
+
+.ui.simple.dropdown.item {
+  color: #ddd;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  padding-right: 1rem;
+}
+
+.title {
+  color: var(--purple)
+}
