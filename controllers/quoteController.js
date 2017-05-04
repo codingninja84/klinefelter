@@ -11,8 +11,6 @@ module.exports = (function(){
     auto: function(req, res) {
       var newAutoQuote = new Auto(req.body)
 
-
-
       let transporter = nodemailer.createTransport({
         service: 'gmail',
         host: "smtp.gmail.com",
@@ -23,13 +21,12 @@ module.exports = (function(){
       });
 
       let mailOptions = {
-        from: '"Quote Request" <klinefelter.quote.request@gmail.com>', // sender address
-        to: 'ianvtseng@gmail.com, rhanna1621@hotmail.com', // list of receivers
-        subject: 'New Quote Request', // Subject line
-        text: req.body, // plain text body
+        from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
+        to: 'ianvtseng@gmail.com, rhanna1621@hotmail.com',
+        subject: 'New Quote Request',
+        text: "This is the form data placeholder",
       };
 
-      // send mail with defined transport object
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           return console.log(error);
@@ -51,6 +48,30 @@ module.exports = (function(){
     },
     commercial: function(req, res) {
       var newCommericalQuote = new Commercial(req.body)
+
+      let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        host: "smtp.gmail.com",
+        auth: {
+          user: 'klinefelter.quote.request@gmail.com',
+          pass: 'password12345'
+        }
+      });
+
+      let mailOptions = {
+        from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
+        to: 'ianvtseng@gmail.com, rhanna1621@hotmail.com',
+        subject: 'New Quote Request',
+        text: "This is the form data placeholder",
+      };
+
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+      });
+
       newCommericalQuote.save(function(err, data) {
         if (err) {
           console.log(err)
@@ -63,6 +84,30 @@ module.exports = (function(){
     },
     home: function(req, res) {
       var newHomeQuote = new Home(req.body)
+
+      let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        host: "smtp.gmail.com",
+        auth: {
+          user: 'klinefelter.quote.request@gmail.com',
+          pass: 'password12345'
+        }
+      });
+
+      let mailOptions = {
+        from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
+        to: 'ianvtseng@gmail.com, rhanna1621@hotmail.com',
+        subject: 'New Quote Request',
+        text: "This is the form data placeholder",
+      };
+
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+      });
+
       newHomeQuote.save(function(err, data) {
         if (err) {
           console.log(err)
@@ -75,6 +120,30 @@ module.exports = (function(){
     },
     life: function(req, res) {
       var newLifeQuote = new Life(req.body)
+
+      let transporter = nodemailer.createTransport({
+        service: 'gmail',
+        host: "smtp.gmail.com",
+        auth: {
+          user: 'klinefelter.quote.request@gmail.com',
+          pass: 'password12345'
+        }
+      });
+
+      let mailOptions = {
+        from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
+        to: 'ianvtseng@gmail.com, rhanna1621@hotmail.com',
+        subject: 'New Quote Request',
+        text: "This is the form data placeholder",
+      };
+
+      transporter.sendMail(mailOptions, (error, info) => {
+        if (error) {
+          return console.log(error);
+        }
+        console.log('Message %s sent: %s', info.messageId, info.response);
+      });
+      
       newLifeQuote.save(function(err, data) {
         if (err) {
           console.log(err)
