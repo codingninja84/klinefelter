@@ -3,6 +3,7 @@ var app = express()
 var path = require('path')
 var bp = require('body-parser')
 var session = require('express-session')
+var nodemailer = require('nodemailer')
 
 app.use(express.static(path.join(__dirname, "./public/dist")));
 // app.use(express.static(path.join(__dirname, '/node_modules')))
