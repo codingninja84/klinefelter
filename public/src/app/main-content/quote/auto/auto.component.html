@@ -1,5 +1,5 @@
   <div class="ui container">
-    <form class="ui form">
+    <form class="ui form" (submit)="create(postData)" #postData="ngForm" >
       <h4 class="ui dividing header">Auto Quote</h4>
       <div class="field">
         <label>Name</label>
@@ -455,6 +455,6 @@
             </div>
           </div>
         </div>
-      <div class="ui button" tabindex="0">Submit Quote</div>
+      <input type="submit" name="submit" value="submit">
     </form>
   </div>
