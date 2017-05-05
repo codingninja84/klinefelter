@@ -5,10 +5,10 @@
         <label>Name</label>
         <div class="two fields">
           <div class="field">
-            <input type="text" name=first_name [(ngModel)]="first_name" placeholder="">
+            <input type="text" name=first_name [(ngModel)]="first_name" placeholder="First Name">
           </div>
           <div class="field">
-            <input type="text" name="last_name" [(ngModel)]="last_name" placeholder="">
+            <input type="text" name="last_name" [(ngModel)]="last_name" placeholder="Last Name">
           </div>
         </div>
       </div>
@@ -29,7 +29,7 @@
       <div class="two fields">
         <div class="field">
           <label>State</label>
-          <select class="ui fluid dropdown">
+          <select name="state" class="ui fluid dropdown">
             <option value="">State</option>
         <option value="AL">Alabama</option>
         <option value="AK">Alaska</option>
@@ -90,20 +90,20 @@
         <label>Previous Address</label>
         <div class="fields">
           <div class="eight wide field">
-            <input type="text" name="address" [(ngModel)]="pre-address" placeholder="Street Address">
+            <input type="text" name="pre_address" [(ngModel)]="pre_address" placeholder="Street Address">
           </div>
           <div class="four wide field">
-            <input type="text" name="apt" [(ngModel)]="pre-apt" placeholder="Apt #">
+            <input type="text" name="pre_apt_num" [(ngModel)]="pre_apt_num" placeholder="Apt #">
           </div>
           <div class="four wide field">
-            <input type="text" name="city" [(ngModel)]="pre-city" placeholder="City">
+            <input type="text" name="pre_city" [(ngModel)]="pre_city" placeholder="City">
           </div>
         </div>
       </div>
       <div class="two fields">
         <div class="field">
           <label>State</label>
-          <select class="ui fluid dropdown">
+          <select name="pre_state" class="ui fluid dropdown">
             <option value="">State</option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -161,25 +161,25 @@
         </div>
         <h4 class="ui dividing header">Contact</h4>
         <div class="fields">
-          <label>Phone</label>
-          <div class="two wide field">
+          <label>Phone Number</label>
+          <div class="six wide field">
+            <input type="text" name="phone_number" [(ngModel)]="phone_number" placeholder="">
+          </div>
+          <!-- <div class="two wide field">
             <input type="text" name="first-name" [(ngModel)]="first-name" placeholder="">
           </div>
           <div class="two wide field">
             <input type="text" name="first-name" [(ngModel)]="first-name" placeholder="">
-          </div>
-          <div class="two wide field">
-            <input type="text" name="first-name" [(ngModel)]="first-name" placeholder="">
-          </div>
+          </div> -->
           <label>Email</label>
           <div class="ten wide field">
-            <input type="text" name="last-name" [(ngModel)]="last-name" placeholder="">
+            <input type="text" name="email_address" [(ngModel)]="email_address" placeholder="">
           </div>
         </div>
         <h3>Are you currently insured?</h3>
         <div class="inline sixteen wide field">
           <div class="ui slider checkbox">
-            <input type="checkbox" tabindex="0" class="hidden">
+            <input type="checkbox" tabindex="0">
             <label>Yes</label>
           </div>
           <label></label>

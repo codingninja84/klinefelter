@@ -6,12 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auto.component.css']
 })
 export class AutoComponent implements OnInit {
-  first_name: string = ""
-  last_name: string = ""
-  address: string = ""
-  apt_num: string = ""
-  city: string = ""
-  state: string = ""
+  // first_name: string = ""
+  // last_name: string = ""
+  // address: string = ""
+  // apt_num: string = ""
+  // city: string = ""
+  // state: string = ""
+
 
   constructor() { }
 
