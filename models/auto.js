@@ -14,12 +14,12 @@ var AutoSchema = new Schema({
   pre_apt_num: {type: String},
   pre_city: {type: String},
   pre_state: {type: String},
-  
+
   insured: {type: String},
   current_insurance: {type: String},
   other_insurance: {type: String},
   policy_expiration: {type: Date},
-  annual_premium: {type: String},
+  premium: {type: String},
   cancelled_or_renewed_last_three_years: {type: String},
   rent_or_own_home: {type: String},
   bodily_injury_liability: {type: String},

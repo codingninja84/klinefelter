@@ -197,12 +197,14 @@
         </div>
         <div class="fields">
           <div class="four wide field">
-            <input type="text" name="annual_premium"  placeholder="Current Premium/Monthly" [(ngModel)]="annual_premium">
+            <label>Current Premmium</label>
+            <input type="text" name="premium"  placeholder="Current Premium/Monthly" [(ngModel)]="premium">
           </div>
           <div class="four wide field">
+            <label>Current Policy Expiration</label>
             <input type="date" name="policy_expiration"  placeholder="Policy Expiration Date" [(ngModel)]="policy_expiration">
           </div>
-          <div class="four wide field">
+          <!-- <div class="four wide field">
             <label>Insurance cancelled or renewed last 3 years</label>
             <div class="ui checkbox">
               <input name = "cancelled_or_renewed_last_three_years" type="checkbox" tabindex="0" [(ngModel)]="cancelled_or_renewed_last_three_years">
@@ -212,8 +214,16 @@
               <input name = "cancelled_or_renewed_last_three_years" type="checkbox" tabindex="0" [(ngModel)]="cancelled_or_renewed_last_three_years">
               <label>No</label>
             </div>
-          </div>
+          </div> -->
           <div class="four wide field">
+            <label>Insrance cancelled or renewed last 3 years?</label>
+            <select name="cancelled_or_renewed_last_three_years"class="ui fluid dropdown" [(ngModel)]="cancelled_or_renewed_last_three_years">
+              <option value=""></option>
+              <option value="yes">Yes</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+          <!-- <div class="four wide field">
             <label>Rent or Own</label>
             <div class="ui checkbox">
               <input name= "rent_or_own_home"type="checkbox" tabindex="0" [(ngModel)]="rent_or_own_home">
@@ -223,6 +233,14 @@
               <input name= "rent_or_own_home"type="checkbox" tabindex="0" [(ngModel)]="rent_or_own_home">
               <label>Own</label>
             </div>
+          </div> -->
+          <div class="four wide field">
+            <label>Rent or Own</label>
+            <select name="rent_or_own_home"class="ui fluid dropdown" [(ngModel)]="rent_or_own_home">
+              <option value=""></option>
+              <option value="yes">Rent</option>
+              <option value="no">Own</option>
+            </select>
           </div>
         </div>
         <h4 class="ui dividing header">Current Insurance Company</h4>
