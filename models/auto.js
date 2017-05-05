@@ -14,6 +14,7 @@ var AutoSchema = new Schema({
   pre_apt_num: {type: String},
   pre_city: {type: String},
   pre_state: {type: String},
+  
   insured: {type: String},
   current_insurance: {type: String},
   other_insurance: {type: String},
