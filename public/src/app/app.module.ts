@@ -15,6 +15,7 @@ import { ChatComponent } from './main-content/chat/chat.component';
 import { BioComponent } from './bio/bio.component';
 import { BlogComponent } from './blog/blog.component';
 import { HeaderComponent } from './main-content/header/header.component';
+import { QuoteService } from './main-content/quote/quote.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,7 @@ import { HeaderComponent } from './main-content/header/header.component';
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [QuoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
