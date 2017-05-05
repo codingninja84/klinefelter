@@ -18,7 +18,8 @@ var AutoSchema = new Schema({
 
   insured: {type: String},
   current_insurance: {type: String},
-  company_name: {type: String},
+  other_insurance: {type: String},
+  
   policy_expiration: {type: Date},
   annual_premium: {type: String},
   cancelled_or_renewed_last_three_years: {type: String},

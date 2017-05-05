@@ -179,15 +179,15 @@
         <h3>Are you currently insured?</h3>
         <div class="inline sixteen wide field">
           <div class="ui slider checkbox">
-            <input type="checkbox" tabindex="0">
+            <input name: "insured" type="checkbox" tabindex="0">
             <label>Yes</label>
           </div>
-          <label></label>
+            <label></label>
         </div>
         <h4 class="ui dividing header">Current Insurance Company</h4>
         <div class="fields">
           <div class="eight wide field">
-            <select class="ui fluid dropdown">
+            <select name="current_insurance" class="ui fluid dropdown">
               <option value="">Company</option>
               <option value="AL">Allstate</option>
               <option value="AK">American Family</option>
@@ -198,7 +198,7 @@
             </select>
           </div>
           <div class="six wide field">
-            <input type="text" name="last-name"  placeholder="Other">
+            <input type="text" name="other_insurance"  placeholder="Other">
           </div>
         </div>
         <div class="fields">
