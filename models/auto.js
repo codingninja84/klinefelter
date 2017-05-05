@@ -2,8 +2,12 @@ var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 
 var AutoSchema = new Schema({
-  name: {type: String},
+  first_name: {type: String},
+  last_name: {type: String},
   address: {type: String},
+  apt_num: {type: String},
+  city: {type: String},
+  state: {type: String},
   phone_number: {type: String},
   email_address: {type: String},
   previous_address: {type: String},

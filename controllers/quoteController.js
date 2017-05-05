@@ -143,7 +143,7 @@ module.exports = (function(){
         }
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
-      
+
       newLifeQuote.save(function(err, data) {
         if (err) {
           console.log(err)
