@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./auto.component.css']
 })
 export class AutoComponent implements OnInit {
-
+  firstname: string = ""
+  lastname: string = ""
   constructor() { }
 
   ngOnInit() {

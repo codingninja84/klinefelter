@@ -37,7 +37,7 @@ p, h1, h2, h3 {
   text-align: center;
   height: 100vh;
   color: white;
-  background-image: url("/images/hero.jpg");
+  background-image: url("/assets/images/hero.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -113,4 +113,10 @@ i, .contact a {
 
 .title {
   color: var(--purple)
+}
+
+.chat {
+  border-left: .5px solid #ddd;
+  padding-left: .25rem;
+
 }

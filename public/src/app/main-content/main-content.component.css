@@ -2,15 +2,11 @@
   color: #ddd;
   text-align: center;
   width: 100vw;
+  height: 13vh;
+  margin-bottom: 5%;
   background-color: #2C2B3C;
 }
 
-.quote a, i {
+.savings h1 {
   font-size: 3rem;
-  color: #2C2B3C;
-}
-
-i {
-  border: 2px solid red;
-
 }

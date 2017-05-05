@@ -1,0 +1,12 @@
+.quote a, i {
+  font-size: 3rem;
+  color: #2C2B3C;
+}
+
+.column, .title {
+  text-align: center;
+}
+
+.sub {
+  margin-bottom: 1rem;
+}
