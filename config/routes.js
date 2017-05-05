@@ -1,9 +1,9 @@
-var session = require('../controllers/quoteController.js')
+var quoteController = require('../controllers/quoteController.js')
 
 module.exports = function(app) {
 
   app.post('/auto', function(req, res) {
-    console.log("Test routes")
+    console.log("Test routes, into quoteController.auto")
     quoteController.auto(req, res)
   })
   app.post('/commercial', function(req, res) {

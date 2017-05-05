@@ -10,6 +10,10 @@ module.exports = (function(){
   return {
     auto: function(req, res) {
       var newAutoQuote = new Auto(req.body)
+      console.log("newAutoQuote stuff: " + newAutoQuote)
+      console.log("req.body: " + req.body)
+      console.log("req.body.params: " + req.body.params)
+
 
       let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -22,7 +26,7 @@ module.exports = (function(){
 
       let mailOptions = {
         from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
-        to: 'ianvtseng@gmail.com, rhanna1621@hotmail.com',
+        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com',
         subject: 'New Quote Request',
         text: "This is the form data placeholder",
       };
