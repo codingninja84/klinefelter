@@ -1,4 +1,4 @@
-.quote a, i {
+i {
   font-size: 3rem;
   color: #2C2B3C;
 }
@@ -7,6 +7,10 @@
   text-align: center;
 }
 
+.title {
+  margin-bottom: 2rem;
+}
+
 .sub {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
