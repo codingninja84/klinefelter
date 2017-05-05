@@ -7,7 +7,10 @@ import { QuoteService} from '../quote.service'
 })
 export class AutoComponent implements OnInit {
 
+
   constructor(private quote_service: QuoteService) { }
+
+
 
   ngOnInit() {
   }
