@@ -28,7 +28,7 @@ module.exports = (function(){
         from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
         to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com',
         subject: 'New Quote Request',
-        text: "This is the form data placeholder",
+        text: "This is the form data placeholder: " + newAutoQuote,
       };
 
       transporter.sendMail(mailOptions, (error, info) => {

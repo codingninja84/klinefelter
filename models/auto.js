@@ -10,16 +10,13 @@ var AutoSchema = new Schema({
   state: {type: String},
   phone_number: {type: String},
   email_address: {type: String},
-
   pre_address: {type: String},
   pre_apt_num: {type: String},
   pre_city: {type: String},
   pre_state: {type: String},
-
   insured: {type: String},
   current_insurance: {type: String},
   other_insurance: {type: String},
-  
   policy_expiration: {type: Date},
   annual_premium: {type: String},
   cancelled_or_renewed_last_three_years: {type: String},
@@ -27,12 +24,17 @@ var AutoSchema = new Schema({
   bodily_injury_liability: {type: String},
   property_damage_liabilty: {type: String},
   medical_payments: {type: String},
-  uninsured_motorit_liability: {type: String},
-  uninsured_motorit_property: {type: String},
+  uninsured_motorist_liability: {type: String},
+  uninsured_motorist_property: {type: String},
+  underinsured_motorist_liability: {type: String},
+  underinsured_motorist_property: {type: String},
   comprehensive_deductible: {type: String},
+
   collision_deductible: {type: String},
   rental_reimbursment: {type: String},
   towing_and_labor: {type: String},
+
+  primary_driver_name: {type: String},
   primary_driver_bday: {type: Date},
   primary_driver_license_number: {type: String},
   primary_driver_license_state: {type: String},
