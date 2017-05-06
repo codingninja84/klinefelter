@@ -24,11 +24,14 @@ module.exports = (function(){
         }
       });
 
+      var html_content = '<body><h1>Auto Insurance Quote Request</h1><hr><p>First Name: '  + newAutoQuote.first_name + '</p><p>Last Name: ' + newAutoQuote.last_name + '</p><p>Address: ' + newAutoQuote.address + ' ' + newAutoQuote.apt_num + ' ' + newAutoQuote.city + ', ' + newAutoQuote.state + '</p><p>Phone Number: ' + newAutoQuote.phone_number + '</p><p>Email Address: ' + newAutoQuote.email_address + '</p><p>Previous Address: ' + newAutoQuote.pre_address + ' ' + newAutoQuote.pre_apt_num + ' ' + newAutoQuote.pre_city + ', ' + newAutoQuote.pre_state + '</p></body>'
+
       let mailOptions = {
         from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
         to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com',
         subject: 'New Quote Request',
-        text: "This is the form data placeholder: " + newAutoQuote,
+        // text: "Name: " + newAutoQuote.first_name,
+        html: "" + html_content + ""
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
