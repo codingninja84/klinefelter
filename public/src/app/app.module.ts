@@ -1,3 +1,4 @@
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -35,7 +36,8 @@ import { QuoteService } from './main-content/quote/quote.service';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    BrowserAnimationsModule
   ],
   providers: [QuoteService],
   bootstrap: [AppComponent]

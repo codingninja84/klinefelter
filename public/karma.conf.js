@@ -4,13 +4,14 @@
 module.exports = function (config) {
   config.set({
     basePath: '',
-    frameworks: ['jasmine', '@angular/cli'],
+    frameworks: ['jasmine', '@angular/cli', 'jquery'],
     plugins: [
       require('karma-jasmine'),
       require('karma-chrome-launcher'),
       require('karma-jasmine-html-reporter'),
       require('karma-coverage-istanbul-reporter'),
-      require('@angular/cli/plugins/karma')
+      require('@angular/cli/plugins/karma'),
+      require('jquery')
     ],
     client:{
       clearContext: false // leave Jasmine Spec Runner output visible in browser

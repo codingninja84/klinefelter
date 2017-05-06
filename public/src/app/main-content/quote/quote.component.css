@@ -1,16 +1,23 @@
 i {
   font-size: 3rem;
   color: #2C2B3C;
+  background-size: 100% 200%;
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(142,148,242, 1) 50%);
+  transition: background-position 2s, color 1s, transform 2s;
+}
+
+
+i:hover {
+  color: white;
+  transform: rotate(360deg);
+  background-position: 0 -100%;
 }
 
 .column, .title {
   text-align: center;
 }
 
-.title {
-  margin-bottom: 2rem;
-}
 
-.sub {
+.title, .sub {
   margin-bottom: 2rem;
 }
