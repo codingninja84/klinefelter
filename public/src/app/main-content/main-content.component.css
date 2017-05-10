@@ -44,5 +44,65 @@
 
 
 .blog {
-  height: 20vh;
+  height: 50vh;
+  display: flex;
+}
+
+.left-blog {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 50%;
+  background-color: #2C2B3C;
+  color: #ddd;
+}
+
+.right-blog {
+  display: inline-flex;
+  position: relative;
+  height: 100%;
+  width: 50%;
+  background-color: #f2f2f2;
+
+}
+
+.right-blog-text {
+  margin-left: 10vh;
+  width: 75%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.triangle-side{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 10vh solid transparent;
+  border-bottom: 40vh solid transparent;
+  border-left: 10vh solid #2C2B3C;
+
+}
+
+.more {
+  position: absolute;
+  bottom: 15%;
+}
+
+button {
+  height: 4rem;
+  width: 12rem;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  background-size: 300% 100%;
+  background-image: linear-gradient(to right, var(--purple) 50%, #303030 50%);
+  background-position: left bottom;
+  transition: background-position 200ms;
+}
+
+button:hover {
+  background-position: right bottom;
 }
