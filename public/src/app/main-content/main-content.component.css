@@ -1,12 +1,48 @@
 .savings {
   color: #ddd;
-  text-align: center;
   width: 100vw;
-  height: 13vh;
+  height: 15vh;
   margin-bottom: 5%;
   background-color: #2C2B3C;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .savings h1 {
   font-size: 3rem;
+  font-family: 'lato', sans-serif;
+  font-weight: 700;
+}
+
+
+.column1, .column2 {
+  flex-direction: column;
+  margin: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimony {
+    padding: 5%;
+    position: relative;
+    text-align: center;
+    height: 70vh;
+    width: 100%;
+    color: white;
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), rgba(0,0,0,255.55) url('/assets/tacoma.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.testimony h1 {
+  font-size: 3.5rem;
+}
+
+
+.blog {
+  height: 20vh;
 }

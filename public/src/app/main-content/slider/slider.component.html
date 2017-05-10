@@ -1,6 +1,6 @@
 <div class="ui grid">
   <div  class="two wide column">
-    <button (click)="toggleLeft()" type="button" class="ui red button left"name="button"></button>
+    <button (click)="toggleLeft()" type="button" class="ui button left"name="button"></button>
   </div>
   <div [@column]="leftState" class="two wide column">
     <h1><i class="home icon"></i></h1>
@@ -27,6 +27,7 @@
     Company 6
   </div>
   <div  class="two wide column">
-      <button type="button" class="ui green button right"name="button" (click)="toggleRight()"></button>
+      <button type="button" class="ui button right"name="button" (click)="toggleRight()"></button>
   </div>
 </div>
+<div class="triangle-down"></div>

@@ -13,6 +13,11 @@ i:hover {
   background-position: 0 -100%;
 }
 
+
+.gear3 {
+  
+}
+
 .column, .title {
   text-align: center;
 }
@@ -20,4 +25,64 @@ i:hover {
 
 .title, .sub {
   margin-bottom: 2rem;
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 5%;
+    border: 1px solid #888;
+    width: 80vw;
+    height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal {
+  position: fixed;
+  z-index: 2;
+  left: 0%;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.7);
+}
+
+/* The Close Button */
+.close {
+    color: #ddd;
+    position: absolute;
+    top: 2%;
+    right:2%;
+    font-size: 5rem;
+    font-weight: bold;
+    transition: transform 1s;
+}
+.close:hover, .close:focus {
+    text-decoration: none;
+    cursor: pointer;
+    color: red;
+    font-size: 5rem;
+    font-weight: bold;
+    -ms-transform: rotate(360deg); /* IE 9 */
+    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    transform: rotate(360deg);
+}
+
+button {
+  height: 4rem;
+  width: 12rem;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  background-size: 300% 100%;
+  background-image: linear-gradient(to right, var(--purple) 50%, #303030 50%);
+  background-position: left bottom;
+  transition: background-position 200ms;
+}
+
+button:hover {
+  background-position: right bottom;
 }

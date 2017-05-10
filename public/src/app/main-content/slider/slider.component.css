@@ -1,9 +1,10 @@
 .grid {
-  margin: 3rem 0px;
+  margin-top: 3rem;
   height: 20vh;
   background-color: #f2f2f2;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
+  border-bottom: 2px solid var(--purple);
 }
 
 .column {
@@ -13,3 +14,28 @@ height: 100%;
 text-align: center;
 vertical-align: center;
 }
+
+
+.triangle-down{
+    width: 7.5%;
+    height: 0;
+    padding-left:2.5%;
+    padding-top: 2.5%;
+    overflow: hidden;
+    position: absolute;
+    left:0;
+    right:0;
+    margin:auto;
+    z-index:3;
+}
+.triangle-down:before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    margin-left:-50px;
+    margin-top:-50px;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 50px solid #f2f2f2;
+  }

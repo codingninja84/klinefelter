@@ -2,7 +2,7 @@ var mongoose = require('mongoose')
 var fs = require('fs')
 var path = require('path')
 
-mongoose.connect('mongodb://localhost/quoteformdb')
+// mongoose.connect('mongodb://localhost/quoteformdb')
 
 var models_path = path.join(__dirname, '../models')
 

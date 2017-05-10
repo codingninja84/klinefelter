@@ -1,0 +1,70 @@
+
+.title {
+  text-align: center;
+}
+
+.progress {
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress h5 {
+  margin: 0px;
+  padding: 0px 1rem;
+
+}
+
+.active {
+  border-bottom: 2px solid blue;
+}
+
+.add {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: 100% 200%;
+  background-image: linear-gradient(to bottom, var(--purple) 50%, #2C2B3C 50%);
+  transition: background-position 300ms 200ms,  transform 200ms;
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  color: white;
+  box-shadow: .3rem .5rem .75rem #333;
+  -webkit-box-shadow: .3rem .5rem .75rem #333;
+  -moz-box-shadow: .3rem .5rem .75rem #333;
+}
+
+.add h1 {
+  margin: 0px;
+  font-size: 3rem;
+}
+
+
+.add:hover {
+  background-position: 0 -100%;
+  transform-origin: center;
+  transform: scale(1.05,1.05);
+  cursor: pointer;
+}
+
+.add-driver {
+  margin-bottom: 1rem;
+}
+
+button {
+  height: 4rem;
+  width: 12rem;
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  background-size: 300% 100%;
+  background-image: linear-gradient(to right, var(--purple) 50%, #303030 50%);
+  background-position: left bottom;
+  transition: background-position 200ms;
+}
+
+button:hover {
+  background-position: right bottom;
+}

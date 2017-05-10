@@ -1,15 +1,50 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  OnInit, trigger, state, style, transition, animate } from '@angular/core';
 
 @Component({
   selector: 'app-quote',
   templateUrl: './quote.component.html',
-  styleUrls: ['./quote.component.css']
+  styleUrls: ['./quote.component.css'],
+  animations: [
+    trigger('auto-modal', [
+     state('inactive', style({
+       transform: "translateY(100%)",
+       display: "none",
+     })),
+     state('active', style({
+       display : "block",
+     })),
+     transition('inactive => active', animate('1000ms ease-in-out')),
+     transition('active => inactive', animate('100ms ease-in-out')),
+ ]),
+ trigger('moveGear', [
+  state('inactive', style({
+    color: "tomato"
+  })),
+  state('active', style({
+    color: "blue",
+    transform: "rotate(1080deg)"
+  })),
+  transition('inactive => active', animate('5000ms ease-in-out')),
+  transition('active => inactive', animate('100ms ease-in-out')),
+]),
+ ]
 })
 export class QuoteComponent implements OnInit {
-
-  constructor() { }
+  autoState:string = 'inactive';
+  gears:string = 'inactive'
+  constructor() {}
 
   ngOnInit() {
+
+  }
+
+  toggleAuto(){
+    this.autoState = this.autoState === 'inactive' ? 'active' : 'inactive';
+
+  }
+
+  moveGears(){
+    this.gears = this.gears === 'inactive' ? 'active' : 'inactive';
   }
 
 }
