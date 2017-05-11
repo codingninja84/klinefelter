@@ -16,6 +16,7 @@ import { BioComponent } from './bio/bio.component';
 import { BlogComponent } from './blog/blog.component';
 import { HeaderComponent } from './main-content/header/header.component';
 import { QuoteService } from './main-content/quote/quote.service';
+import { FooterComponent } from './main-content/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { QuoteService } from './main-content/quote/quote.service';
     ChatComponent,
     BioComponent,
     BlogComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
