@@ -16,12 +16,12 @@ button:hover {
 }
 
 .main-container {
-  height: 40vh;
+  height: 50vh;
   width: 100vw;
 }
 
 .top-bar {
-  height: 10%;
+  height: 5%;
   background-color:#f2f2f2;
   width: 100%;
 }
@@ -35,9 +35,26 @@ button:hover {
   background-color: #2C2B3C;
 }
 
+.anchor {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: .8rem;
+  color: #ddd;
+  height: 10%;
+  background-color: var(--purple);
+}
+
 .column:first-child{
   border: none;
-  flex-direction: column;
+}
+
+a {
+  color: #ddd;
+}
+
+a:hover {
+  color: #2C2B3C;
 }
 
 .column {
@@ -47,6 +64,7 @@ button:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   height: 90%;
   width: 25%;
 }

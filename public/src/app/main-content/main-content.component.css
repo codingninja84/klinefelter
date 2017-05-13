@@ -19,6 +19,7 @@ button:hover {
   background-position: right bottom;
 }
 
+
 .savings {
   position: relative;
   margin: 0px;
@@ -127,16 +128,38 @@ button:hover {
 }
 
 .marketing {
-  height: 40vh;
+  height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: relative;
+}
+
+.marketing-triangle-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -9999;
+  overflow: hidden;
+  width: 0;
+  height: 0;
+
+}
+
+.marketing-triangle-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: -9999;
+  overflow: hidden;
+  width: 0;
+  height: 0;
 }
 
 
 .referral-line {
-  height: .75rem;
+  height: .5rem;
   background-color: var(--purple);
   border: none;
   border-radius: 5px;

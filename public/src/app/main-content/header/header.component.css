@@ -3,38 +3,64 @@ p, h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
 }
 
-.ui.grid+.grid {
-    margin-top: 0px;
+.contain {
+  font-size: 12px;
 }
 
+@media screen and (min-width: 900px) {
+
+
+
+}
+
+@media screen and (min-width: 1200px) {
+
+    font-size: 16px;
+
+}
+
+
 .top-bar {
-  padding: 0px .25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   width: 100vw;
   margin: 0px;
 }
 
-.social, .location {
-  text-align: center;
+.top-elements {
+  padding: 0px .5rem;
 }
 
 
-.compact {
-  height: 100%;
-}
-.four.wide.column.quote {
+.quote {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  width: 30%;
   padding: 0;
+
 }
 
-.ib {
-  display: inline-block;
+.chat {
+  border-left: 1px solid #ddd;
 }
+
+.location, .contact {
+  display:  inline-flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: row;
+  font-size: .9rem;
+  width: 35%;
+  height: 100%
+}
+
 
 
 /*colors, fonts, backgrounds*/
 
 .hero {
-  position: relative;
-  text-align: center;
   height: 100vh;
   color: white;
   background-image: url("/assets/images.jpg");
@@ -44,79 +70,175 @@ p, h1, h2, h3 {
   background-size: cover;
 }
 
-.logo {
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
 
+.ui.simple.dropdown.item {
+  color: #ddd;
+}
 .compact {
+  height: 100%;
   background-color: #2C2B3C;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.22rem;
   font-weight: 400;
-  border-radius: 0px;
+  border-radius: 0;
 }
 
 i, .contact a {
   color: #ddd;
 }
 
-.social a {
-  color: #ddd;
-  font-size: 1.5rem;
-  vertical-align: bottom;
-}
-
-.social i:hover {
-  color: #2C2B3C;
-}
 
 .top-bar {
   background-color: var(--purple);
 }
 
-.location, .contact {
-  font-size: 1rem;
-
-}
-
-.marker, .mail, .call, .comments {
+.marker, .mail, .call, .comments, .clock {
   color: #B7C3F3
 }
 
 
 .menu-div {
+  overflow: hidden;
+  padding: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  height: 10vh;
+  position: absolute;
+  z-index: 3;
   background: rgba(55,55,55,.29);
-  box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px 0px
+  box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px 0px;
 }
 
-.right a {
-  color: #8E94F2;
+.menu-div:hover {
+  background: rgba(55,55,55,.50);
+}
+
+.nav-menu {
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  width: 59%;
+  flex-shrink: 1;
+}
+
+.nav-menu a {
+  color: #61b6e8;
   font-family: 'Montserrat', sans-serif;
   font-size: 1.22rem;
   font-weight: 600;
+  background-size: 300% 100%;
+  background-image: linear-gradient(to right, transparent 50%, rgba(130, 80, 171, 0.3) 50%);
+  background-position: left bottom;
+  transition: background-position 400ms;
 }
 
-.right a:hover, .active.item {
-  color: #2C2B3C;
-}
-
-.ui.simple.dropdown.item {
+.nav-menu a:hover, .active.item {
   color: #ddd;
+  background-position: right bottom;
+  cursor: pointer;
 }
 
-.hero-text h1 {
-  font-size: 4rem;
-  padding-right: 1rem;
+.link {
+  padding: 1.5rem;
 }
 
-.title {
+.social-menu {
+  width: 41%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-menu a {
+  padding: 0px 1rem;
+}
+
+.social-icon {
+  background-size: 100% 300%;
+  background-image: linear-gradient(to bottom, transparent 50%, rgba(130, 80, 171, 0.3) 50%);
+  background-position: top;
+  transition: background-position 400ms;
+  font-size: 1.5rem;
+}
+
+.social-icon a:hover {
+  background-position: top;
   color: var(--purple)
 }
 
-.chat {
-  border-left: .5px solid #ddd;
-  padding-left: .25rem;
+.social-menu a:hover {
+  cursor: pointer;
+}
 
+.left-hero {
+  height: 100%;
+  width: 45%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero-text{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #2C2B3C;
+}
+
+
+.triangle {
+  overflow: hidden;
+  width: 0;
+  height: 0;
+  border-top: 40vw solid transparent;
+  border-bottom: 25vw solid transparent;
+  border-left: 6vw solid #2C2B3C;
+}
+
+
+.title {
+  color: var(--purple);
+  margin-bottom: 0;
+}
+
+.tacoma {
+  text-align: center;
+}
+
+.tacoma h3 {
+  margin: 0;
+}
+
+.logo {
+  width:60%;
+}
+
+.play {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 6vw;
+  height: 6vw;
+  border-radius: 50%;
+  border: 2px solid white;
+  position: relative;
+}
+
+.play-icon {
+  position: absolute;
+  height: 65%;
+  width: 65%;
+  right: 10%;
+}
+
+.play:hover {
+  border-color: var(--purple);
 }
