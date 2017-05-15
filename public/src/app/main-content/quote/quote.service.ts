@@ -9,9 +9,9 @@ export class QuoteService {
   constructor(private http: Http) { }
   createQuote(quote){
 
+
     console.log("in service", quote.form.value)
     return this.http.post("/auto", quote.form.value)
     .map(data => data.json()).toPromise()
-}
-
+  }
 }

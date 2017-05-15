@@ -11,22 +11,15 @@ module.exports = (function(){
     auto: function(req, res) {
       var newAutoQuote = new Auto(req.body)
 
-      // var newDriver = new Driver(driveName: req.body.drive_blah,)
-      //
-      // newAutoQuote.drivers.push(newDriver)
-
       console.log("newAutoQuote stuff: " + newAutoQuote)
-      console.log("req.body: " + req.body)
-      console.log("req.body.params: " + req.body.params)
-      console.log("Make: " + newAutoQuote.vehicle_one_make)
-      console.log("Vin: " +newAutoQuote.vehicle_one_vin)
-      console.log("Model: " + newAutoQuote.vehicle_one_model)
-      console.log("Annual Miles: " + newAutoQuote.vehicle_one_annual_miles)
-      console.log("Year: " + newAutoQuote.vehicle_one_year)
+      // console.log("req.body: " + req.body)
+      // console.log("req.body.params: " + req.body.params)
+      // console.log("req.body.drivers: " + req.body.drivers)
+      // console.log("req.params.drivers: " + req.params.drivers)
+      // console.log("NewAutoQuote: " + newAutoQuote.drivers)
 
-      // Test drivers
-      for(var i = 0; i < req.body.drivers.length; i++) {
-        console.log("Driver: " + req.body.drivers[i])
+      for (var i = 0; i < newAutoQuote.drivers.length; i++) {
+        console.log("Driver!!!: " + newAutoQuote.drivers[i])
       }
 
       let transporter = nodemailer.createTransport({
@@ -38,7 +31,17 @@ module.exports = (function(){
         }
       });
 
-      var html_content = '<body><h1>Auto Insurance Quote Request</h1><hr><p>First Name: '  + newAutoQuote.first_name + '</p><p>Last Name: ' + newAutoQuote.last_name + '</p><p>Address: ' + newAutoQuote.address + ' ' + newAutoQuote.apt_num + ' ' + newAutoQuote.city + ', ' + newAutoQuote.state + '</p><p>Phone Number: ' + newAutoQuote.phone_number + '</p><p>Email Address: ' + newAutoQuote.email_address + '</p><p>Previous Address: ' + newAutoQuote.pre_address + ' ' + newAutoQuote.pre_apt_num + ' ' + newAutoQuote.pre_city + ', ' + newAutoQuote.pre_state + '</p><p>Insured?: ' + newAutoQuote.insured + ' </p><p>Current Insurance: ' + newAutoQuote.current_insurance + '</p></p>Other Insurance: ' + newAutoQuote.other_insurance + '</p><p>Policy Expiration: ' + newAutoQuote.policy_expiration + '</p><p>Premium: ' + newAutoQuote.premium + '</p></p>Cancelled or renewed insurance in the last three years?: ' + newAutoQuote.cancelled_or_renewed_last_three_years + '</p><p>Rent or own home: ' + newAutoQuote.rent_or_own_home + '</p><p>Bodily injuary liability: ' + newAutoQuote.bodily_injury_liability + '</p><p>Property Damange Liability: ' + newAutoQuote.property_damage_liabilty + '</p><p>Medical Payments: ' + newAutoQuote.medical_payments + '</p><p>Uninsured Motorist Liability: ' + newAutoQuote.uninsured_motorist_liability + '</p><p>Uninsured Motorist Property: ' + newAutoQuote.uninsured_motorist_property + '</p><p>Underinsured Motorist Liability: ' + newAutoQuote.underinsured_motorist_liability + '</p><p>Underinsured Motorist Property: ' + newAutoQuote.underinsured_motorist_property + '</p><p>Comprehensive Deductible: ' + newAutoQuote.comprehensive_deductible + '</p><p>Collision Deductible: ' + newAutoQuote.collision_deductible + '</p><p>Driver Name: ' + newAutoQuote.primary_driver_name + '</p><p>Drivery Bday: ' + newAutoQuote.primary_driver_bday + '</p><p>License Number: ' + newAutoQuote.primary_driver_license_number + '</p><p>License State: ' + newAutoQuote.primary_driver_license_state +'</p><p>Accidents in the last 5 years?: ' + newAutoQuote.primary_tickets_accidents_last_five_years + '</p><p>Vehicle Year: ' + newAutoQuote.vehicle_one_year + '</p><p>Vehicle Make: ' + newAutoQuote.vehicle_one_make + '</p><p>Vehicle Model: ' + newAutoQuote.vehicle_one_model + '</p><p>Vehicle Annual Miles: ' + newAutoQuote.vehicle_one_annual_miles + '</p><p>Vehicle VIN: ' + newAutoQuote.vehicle_one_vin + '</p> </body>'
+      var drivers_string = ""
+      for (var i = 0; i < newAutoQuote.drivers.length; i++) {
+        if (i == 0) {
+          drivers_string += "Primary driver name: " + newAutoQuote.drivers[i].driver_name + ", Primary driver birthday: " + newAutoQuote.drivers[i].driver_bday + ", Primary driver license number: " + newAutoQuote.drivers[i].driver_license_number + ", Primary driver license state: " + newAutoQuote.drivers[i].driver_license_state + ", Primary driver accidents in the last 5 years?: " + newAutoQuote.drivers[i].tickets_accidents_last_five_years
+        } else {
+          drivers_string += ", Driver name: " + newAutoQuote.drivers[i].driver_name + ", Driver birthday: " + newAutoQuote.drivers[i].driver_bday + ", Driver license number: " + newAutoQuote.drivers[i].driver_license_number + ", Driver license state: " + newAutoQuote.drivers[i].driver_license_state + ", Driver accidents in the last 5 years?: " + newAutoQuote.drivers[i].tickets_accidents_last_five_years
+        }
+      }
+      console.log("Drivers String after pop: " + drivers_string)
+
+      var html_content = '<body><h1>Auto Insurance Quote Request</h1><hr><p>First Name: '  + newAutoQuote.first_name + '</p><p>Last Name: ' + newAutoQuote.last_name + '</p><p>Address: ' + newAutoQuote.address + ' ' + newAutoQuote.apt_num + ' ' + newAutoQuote.city + ', ' + newAutoQuote.state + '</p><p>Phone Number: ' + newAutoQuote.phone_number + '</p><p>Email Address: ' + newAutoQuote.email_address + '</p><p>Previous Address: ' + newAutoQuote.pre_address + ' ' + newAutoQuote.pre_apt_num + ' ' + newAutoQuote.pre_city + ', ' + newAutoQuote.pre_state + '</p><p>Insured?: ' + newAutoQuote.insured + ' </p><p>Current Insurance: ' + newAutoQuote.current_insurance + '</p></p>Other Insurance: ' + newAutoQuote.other_insurance + '</p><p>Policy Expiration: ' + newAutoQuote.policy_expiration + '</p><p>Premium: ' + newAutoQuote.premium + '</p></p>Cancelled or renewed insurance in the last three years?: ' + newAutoQuote.cancelled_or_renewed_last_three_years + '</p><p>Rent or own home: ' + newAutoQuote.rent_or_own_home + '</p><p>Bodily injuary liability: ' + newAutoQuote.bodily_injury_liability + '</p><p>Property Damange Liability: ' + newAutoQuote.property_damage_liabilty + '</p><p>Medical Payments: ' + newAutoQuote.medical_payments + '</p><p>Uninsured Motorist Liability: ' + newAutoQuote.uninsured_motorist_liability + '</p><p>Uninsured Motorist Property: ' + newAutoQuote.uninsured_motorist_property + '</p><p>Underinsured Motorist Liability: ' + newAutoQuote.underinsured_motorist_liability + '</p><p>Underinsured Motorist Property: ' + newAutoQuote.underinsured_motorist_property + '</p><p>Comprehensive Deductible: ' + newAutoQuote.comprehensive_deductible + '</p><p>Collision Deductible: ' + newAutoQuote.collision_deductible + '</p><p>Drivers ' + drivers_string + '</p><p>Vehicle Year: ' + newAutoQuote.vehicle_one_year + '</p><p>Vehicle Make: ' + newAutoQuote.vehicle_one_make + '</p><p>Vehicle Model: ' + newAutoQuote.vehicle_one_model + '</p><p>Vehicle Annual Miles: ' + newAutoQuote.vehicle_one_annual_miles + '</p><p>Vehicle VIN: ' + newAutoQuote.vehicle_one_vin + '</p> </body>'
 
       let mailOptions = {
         from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
@@ -56,6 +59,7 @@ module.exports = (function(){
       });
 
       newAutoQuote.save(function(err, data) {
+        console.log("Inside the save function.")
         if (err) {
           console.log(err)
           console.log("Error saving Auto Quote")
