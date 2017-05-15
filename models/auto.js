@@ -41,6 +41,8 @@ var AutoSchema = new Schema({
   // primary_driver_license_number: {type: String},
   // primary_driver_license_state: {type: String},
   // primary_tickets_accidents_last_five_years: {type: String},
+
+
   // secondary_driver_bday: {type: Date},
   // secondary_driver_license_number: {type: String},
   // secondary_driver_license_state: {type: String},
