@@ -13,7 +13,11 @@ module.exports = (function(){
       console.log("newAutoQuote stuff: " + newAutoQuote)
       console.log("req.body: " + req.body)
       console.log("req.body.params: " + req.body.params)
-
+      console.log("Make: " + newAutoQuote.vehicle_one_make)
+      console.log("Vin: " +newAutoQuote.vehicle_one_vin)
+      console.log("Model: " + newAutoQuote.vehicle_one_model)
+      console.log("Annual Miles: " + newAutoQuote.vehicle_one_annual_miles)
+      console.log("Year: " + newAutoQuote.vehicle_one_year)
 
       let transporter = nodemailer.createTransport({
         service: 'gmail',
