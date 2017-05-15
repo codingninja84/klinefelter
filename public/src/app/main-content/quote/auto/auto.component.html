@@ -444,7 +444,34 @@
                 <h1>+</h1>
               </div>
             </div>
-            {{this.auto_service.drivers | json}}
+            <div *ngIf="this.auto_service.drivers.length >= 1" class="ui table purple">
+              <table class="ui tablet stackable table">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Status</th>
+                    <th class="right aligned">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>John</td>
+                    <td>Approved</td>
+                    <td class="right aligned">None</td>
+                  </tr>
+                  <tr>
+                    <td>Jamie</td>
+                    <td>Approved</td>
+                    <td class="right aligned">Requires call</td>
+                  </tr>
+                  <tr>
+                    <td>Jill</td>
+                    <td>Denied</td>
+                    <td class="right aligned">None</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
             <button type="button"(click)="toggleDriver()" >Previous </button>
             <button type="button"(click)="toggleCar()" >Next </button>
           </div>
