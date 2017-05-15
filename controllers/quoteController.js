@@ -18,15 +18,21 @@ module.exports = (function(){
       console.log("newAutoQuote stuff: " + newAutoQuote)
       console.log("req.body: " + req.body)
       console.log("req.body.params: " + req.body.params)
-      console.log("Make: " + newAutoQuote.vehicle_one_make)
-      console.log("Vin: " +newAutoQuote.vehicle_one_vin)
-      console.log("Model: " + newAutoQuote.vehicle_one_model)
-      console.log("Annual Miles: " + newAutoQuote.vehicle_one_annual_miles)
-      console.log("Year: " + newAutoQuote.vehicle_one_year)
+      console.log("req.body.drivers: " + req.body.drivers)
+      console.log("req.params.drivers: " + req.params.drivers)
+      console.log("NewAutoQuote: " + newAutoQuote.drivers)
+
+      // Test req.body
+      // for (var k in newAutoQuote) {
+      //   console.log(newAutoQuote[k])
+      // }
 
       // Test drivers
-      for(var i = 0; i < req.body.drivers.length; i++) {
-        console.log("Driver: " + req.body.drivers[i])
+      // for(var i = 0; i < req.body.drivers.length; i++) {
+      //   console.log("Driver: " + req.body.drivers[i])
+      // }
+      for (var i = 0; i < newAutoQuote.drivers.length; i++) {
+        console.log("Driver!!!: " + newAutoQuote.drivers[i])
       }
 
       let transporter = nodemailer.createTransport({
