@@ -434,8 +434,8 @@
               <label>Tickets or Accidents Last Five Years?</label>
               <select name="tickets_accidents_last_five_years" class="ui fluid dropdown" [(ngModel)]="tickets_accidents_last_five_years">
                 <option value="">Select</option>
-                <option value="100">Yes</option>
-                <option value="250">No</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
               </select>
             </div>
             <div class="add-driver">
@@ -448,26 +448,25 @@
               <table class="ui tablet stackable table">
                 <thead>
                   <tr>
-                    <th>Name</th>
-                    <th>Status</th>
-                    <th class="right aligned">Notes</th>
+                    <th>Number of Drivers</th>
+                    <th>Driver Name</th>
+                    <th>Driver DOB</th>
+                    <th>Driver License #</th>
+                    <th>Driver License State</th>
+                    <th>Accidents or Tickets</th>
+                    <th class="center aligned">Make Changes</th>
                   </tr>
                 </thead>
-                <tbody>
+                <tbody *ngFor="let driver of this.auto_service.drivers; let i = index">
                   <tr>
-                    <td>John</td>
-                    <td>Approved</td>
-                    <td class="right aligned">None</td>
-                  </tr>
-                  <tr>
-                    <td>Jamie</td>
-                    <td>Approved</td>
-                    <td class="right aligned">Requires call</td>
-                  </tr>
-                  <tr>
-                    <td>Jill</td>
-                    <td>Denied</td>
-                    <td class="right aligned">None</td>
+                    <td *ngIf="i < 1">Primary Driver:</td>
+                    <td *ngIf="i >= 1">Secondary Driver {{i}}:</td>
+                    <td>{{driver.driver_name}}</td>
+                    <td>{{driver.driver_bday}}</td>
+                    <td>{{driver.driver_license_number}}</td>
+                    <td>{{driver.driver_license_state}}</td>
+                    <td>{{driver.tickets_accidents_last_five_years}}</td>
+                    <td class="right aligned"><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
                   </tr>
                 </tbody>
               </table>
