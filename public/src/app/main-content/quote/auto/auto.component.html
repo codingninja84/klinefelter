@@ -360,21 +360,21 @@
           <div class="two fields">
             <div class="field">
               <label>Driver Name</label>
-              <input type="text" name="primary_driver_name" value="" [(ngModel)]="primary_driver_name">
+              <input type="text" name="driver_name" value="" [(ngModel)]="driver_name">
             </div>
             <div class="field">
               <label>Driver DOB</label>
-              <input type="date" name="primary_driver_bday" value="" [(ngModel)]="primary_driver_bday">
+              <input type="date" name="driver_bday" value="" [(ngModel)]="driver_bday">
             </div>
           </div>
           <div class="two fields">
             <div class="field">
               <label>License Number</label>
-              <input type="text" name="primary_driver_license_number" value="" [(ngModel)]="primary_driver_license_number">
+              <input type="text" name="driver_license_number" value="" [(ngModel)]="driver_license_number">
             </div>
             <div class="field">
               <label>License State</label>
-              <select name="primary_driver_license_state" class="ui fluid dropdown" [(ngModel)]="primary_driver_license_state">
+              <select name="driver_license_state" class="ui fluid dropdown" [(ngModel)]="driver_license_state">
                 <option value="">State</option>
                 <option value="AL">Alabama</option>
                 <option value="AK">Alaska</option>
@@ -432,7 +432,7 @@
             </div>
             <div class="field">
               <label>Tickets or Accidents Last Five Years?</label>
-              <select name="primary_tickets_accidents_last_five_years" class="ui fluid dropdown" [(ngModel)]="primary_tickets_accidents_last_five_years">
+              <select name="tickets_accidents_last_five_years" class="ui fluid dropdown" [(ngModel)]="tickets_accidents_last_five_years">
                 <option value="">Select</option>
                 <option value="100">Yes</option>
                 <option value="250">No</option>
@@ -444,6 +444,7 @@
                 <h1>+</h1>
               </div>
             </div>
+            {{this.auto_service.drivers | json}}
             <button type="button"(click)="toggleDriver()" >Previous </button>
             <button type="button"(click)="toggleCar()" >Next </button>
           </div>

@@ -1,5 +1,7 @@
 import { Component,  OnInit, trigger, state, style, transition, animate, AfterViewChecked, ElementRef, ViewChild } from '@angular/core';
 import { QuoteService} from '../quote.service'
+import { AutoQuoteService} from './autoquote.service'
+import { Driver } from './driver'
 @Component({
   selector: 'app-auto',
   templateUrl: './auto.component.html',
@@ -57,29 +59,49 @@ trigger('carInfo', [
 })
 export class AutoComponent implements OnInit {
   @ViewChild('container') private myScrollContainer: ElementRef;
+  driver: Driver;
+  driver_name = "";
+  driver_bday = "";
+  driver_license_number = "";
+  driver_license_state = "";
+  tickets_accidents_last_five_years = "";
 
-  constructor(private quote_service: QuoteService) { }
+  constructor(private quote_service: QuoteService, private auto_service: AutoQuoteService) { }
 
 
 
   ngOnInit() {
   }
 
+  clearDriver(){
+    this.driver_name = "";
+    this.driver_bday = "";
+    this.driver_license_number = "";
+    this.driver_license_state = "";
+    this.tickets_accidents_last_five_years = "";
+  }
 
-   scrollToTop() {
-     console.log(this.myScrollContainer)
-        this.myScrollContainer.nativeElement.scrollTop;
+  addDriver(){
+    this.driver = new Driver(this.driver_name, this.driver_bday, this.driver_license_number, this.driver_license_state, this.tickets_accidents_last_five_years)
+    console.log(this.driver)
+    this.clearDriver();
+    this.auto_service.drivers.push(this.driver)
 
-   }
+  }
+
 
   create(postData){
   console.log("in component")
+  postData.drivers = this.auto_service.drivers
   this.quote_service.createQuote(postData)
   .then((data) => {
     console.log("Success in component", data)
   })
   .catch(err => console.log(err))
 }
+
+
+//animation functions
   infoState ="active";
   insuranceState = "inactive";
   driverState = "inactive";
@@ -88,29 +110,24 @@ export class AutoComponent implements OnInit {
   toggleInfo(){
     this.infoState = this.infoState === 'active' ? 'inactive' : 'active';
     this.toggleInsurance()
-    this.scrollToTop()
   }
 
   toggleInsurance(){
     this.insuranceState = this.insuranceState === 'inactive' ? 'active' : 'inactive';
     console.log(this.insuranceState)
-    this.scrollToTop()
   }
 
   toggleDriver(){
     this.driverState = this.driverState === 'inactive' ? 'active' : 'inactive';
     console.log(this.driverState)
     this.toggleInsurance()
-    this.scrollToTop()
   }
   toggleCar(){
     this.driverState = this.driverState === 'inactive' ? 'active' : 'inactive';
     this.carState = this.carState === 'inactive' ? 'active' : 'inactive';
     console.log(this.carState)
-    this.scrollToTop()
 
   }
 
-  addDriver(){}
 
 }

@@ -17,7 +17,7 @@ import { BlogComponent } from './blog/blog.component';
 import { HeaderComponent } from './main-content/header/header.component';
 import { QuoteService } from './main-content/quote/quote.service';
 import { FooterComponent } from './main-content/footer/footer.component';
-
+import { AutoQuoteService } from './main-content/quote/auto/autoquote.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +40,7 @@ import { FooterComponent } from './main-content/footer/footer.component';
     HttpModule,
     BrowserAnimationsModule
   ],
-  providers: [QuoteService],
+  providers: [QuoteService, AutoQuoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
