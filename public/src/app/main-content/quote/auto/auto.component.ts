@@ -92,8 +92,7 @@ export class AutoComponent implements OnInit {
 
   create(postData){
   console.log("in component")
-  postData.drivers = this.auto_service.drivers
-  console.log("Drivers: " + postData.drivers)
+  postData.value.drivers = this.auto_service.drivers
   this.quote_service.createQuote(postData)
   .then((data) => {
     console.log("Success in component", data)
