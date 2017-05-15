@@ -24,6 +24,11 @@ module.exports = (function(){
       console.log("Annual Miles: " + newAutoQuote.vehicle_one_annual_miles)
       console.log("Year: " + newAutoQuote.vehicle_one_year)
 
+      // Test drivers
+      for(var i = 0; i < req.body.drivers.length; i++) {
+        console.log("Driver: " + req.body.drivers[i])
+      }
+
       let transporter = nodemailer.createTransport({
         service: 'gmail',
         host: "smtp.gmail.com",
