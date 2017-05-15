@@ -1,6 +1,6 @@
 # klinefelter
 Klinefelter Insurance Group
-Still in phase 1 of development stage.
+is still in phase 1 of development.
 Once completed, this will be a fully functional single page application built using the following:
 ##architecture
 Angular2
