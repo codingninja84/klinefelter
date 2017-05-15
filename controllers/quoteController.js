@@ -10,6 +10,11 @@ module.exports = (function(){
   return {
     auto: function(req, res) {
       var newAutoQuote = new Auto(req.body)
+
+      // var newDriver = new Driver(driveName: req.body.drive_blah,)
+      //
+      // newAutoQuote.drivers.push(newDriver)
+
       console.log("newAutoQuote stuff: " + newAutoQuote)
       console.log("req.body: " + req.body)
       console.log("req.body.params: " + req.body.params)
@@ -18,6 +23,11 @@ module.exports = (function(){
       console.log("Model: " + newAutoQuote.vehicle_one_model)
       console.log("Annual Miles: " + newAutoQuote.vehicle_one_annual_miles)
       console.log("Year: " + newAutoQuote.vehicle_one_year)
+
+      // Test drivers
+      for(var i = 0; i < req.body.drivers.length; i++) {
+        console.log("Driver: " + req.body.drivers[i])
+      }
 
       let transporter = nodemailer.createTransport({
         service: 'gmail',
@@ -45,8 +55,6 @@ module.exports = (function(){
         console.log('Message %s sent: %s', info.messageId, info.response);
       });
 
-
-
       newAutoQuote.save(function(err, data) {
         if (err) {
           console.log(err)
@@ -57,6 +65,7 @@ module.exports = (function(){
         }
       })
     },
+
     commercial: function(req, res) {
       var newCommericalQuote = new Commercial(req.body)
 
@@ -69,11 +78,14 @@ module.exports = (function(){
         }
       });
 
+      var html_content = '<body><h1>Commerical Insurance Quote Request</h1><hr><p>Contact Name: ' + newCommericalQuote.contact_name +  '</p><p>Business Name: ' + newCommericalQuote.business_name + '</p><p>Physical Address: ' + newCommericalQuote.physical_address + '</p><p>Mailing Address: ' + newCommericalQuote.mailing_address + '</p><p>Phone Number: '+ newCommericalQuote.phone_number + '</p><p>Alternate Phone Number: ' + newCommericalQuote.alt_phone_number + '</p><p>Fax Number: ' + newCommericalQuote.fax_number + '</p><p>Email Address: '+ newCommericalQuote.email_address + '</p><p>Current Insurance: ' + newCommericalQuote.current_insurance + '</p><p>Limit Requested: ' + newCommericalQuote.limit_requested + '</p><p>Needed Commercial Coverage: ' + newCommericalQuote.needed_commercial_coverage + '</p><p>Number of FTE: ' + newCommericalQuote.num_full_time_employees + '</p><p>Number of PTE: ' + newCommericalQuote.num_part_time_employees + '</p><p>Number of years in business: ' + newCommericalQuote.num_years_in_business + '</p><p>Business and Client Description: ' + newCommericalQuote.business_and_client_description + '</p><p>Annual Gross Sales: ' + newCommericalQuote.annual_gross_sales + '</p><p>Annual Payroll: ' + newCommericalQuote.annual_payroll + '</p><p>Cost of Subcontractor Work: ' + newCommericalQuote.cost_subcontractor_work + '</p><p>Claims in the last five years: ' + newCommericalQuote.claims_last_five_years + '</p><p>Claims Description: ' + newCommericalQuote.claims_description + '</p><p>Own or rent?: ' + newCommericalQuote.own_or_rent + '</p><p>Year build: ' + newCommericalQuote.year_build + '</p><p>Percent Occupied: ' + newCommericalQuote.percent_occupied + '</p><p>Sprinklers: ' + newCommericalQuote.sprinklers + '</p><p>Construction Type: ' + newCommericalQuote.construction_type + '</p><p>Store: ' + newCommericalQuote + '</p><p>Basement: ' + newCommericalQuote.basement + '</p><p>Square Footage: ' + newCommericalQuote.square_footage + '</p><p>Alarm: ' + newCommericalQuote.alarm + '</p><p>Building Value: ' + newCommericalQuote.building_value + '</p><p>Contents Value: ' + newCommericalQuote.contents_value + '</p><p>Other info: ' + newCommericalQuote.other_info + '</p></body>'
+
       let mailOptions = {
         from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
-        to: 'ianvtseng@gmail.com, rhanna1621@hotmail.com',
+        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com',
         subject: 'New Quote Request',
-        text: "This is the form data placeholder",
+        // text: "Name: " + newAutoQuote.first_name,
+        html: "" + html_content + ""
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
