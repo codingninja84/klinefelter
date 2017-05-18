@@ -36,7 +36,7 @@ module.exports = (function(){
         if (i == 0) {
           drivers_string += "<p>Primary Driver:</p><li>Driver name: " + newAutoQuote.drivers[i].driver_name + "</li><li>Driver birthday: " + newAutoQuote.drivers[i].driver_bday + "</li><li>Driver license number: " + newAutoQuote.drivers[i].driver_license_number + "</li><li>Driver license state: " + newAutoQuote.drivers[i].driver_license_state + "</li><li>Driver accidents in the last 5 years?: " + newAutoQuote.drivers[i].tickets_accidents_last_five_years + "</l1>"
         } else {
-          drivers_string += "<p>Other Drivers</p><l1>Driver name: " + newAutoQuote.drivers[i].driver_name + "</li></li>Driver birthday: " + newAutoQuote.drivers[i].driver_bday + "</li><li>Driver license number: " + newAutoQuote.drivers[i].driver_license_number + "</li><li>Driver license state: " + newAutoQuote.drivers[i].driver_license_state + "</li><li>Driver accidents in the last 5 years?: " + newAutoQuote.drivers[i].tickets_accidents_last_five_years + "</l1>"
+          drivers_string += "<p>Other Driver</p><li>Driver name: " + newAutoQuote.drivers[i].driver_name + "</li><li>Driver birthday: " + newAutoQuote.drivers[i].driver_bday + "</li><li>Driver license number: " + newAutoQuote.drivers[i].driver_license_number + "</li><li>Driver license state: " + newAutoQuote.drivers[i].driver_license_state + "</li><li>Driver accidents in the last 5 years?: " + newAutoQuote.drivers[i].tickets_accidents_last_five_years + "</l1>"
         }
       }
       console.log("Drivers String after pop: " + drivers_string)
