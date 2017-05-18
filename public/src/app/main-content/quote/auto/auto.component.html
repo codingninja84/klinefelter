@@ -183,7 +183,7 @@
               <input type="text" name="email_address" [(ngModel)]="email_address" placeholder="">
             </div>
           </div>
-          <button type="button"(click)="toggleInfo()" >Next </button>
+          <button type="button"(click)="toggleInfo()" class="next">Next </button>
         </div>
         <div class="insurance" [@insuranceInfo]="insuranceState">
           <h3>Are you currently insured?</h3>
@@ -243,7 +243,7 @@
           <div class="fields">
             <div class="four wide field">
               <label>Bodily Injury Liability</label>
-              <select name = "bodily_injury_liability" class="ui fluid dropdown" [(ngModel)]="bodily_injury_liability">
+              <select name="bodily_injury_liability" class="ui fluid dropdown" [(ngModel)]="bodily_injury_liability">
                 <option value="">Select Coverage</option>
                 <option value="25/50">25/50</option>
                 <option value="50/100">50/100</option>
@@ -353,7 +353,7 @@
             </div>
           </div>
           <button type="button"(click)="toggleInfo()" >Previous </button>
-          <button type="button"(click)="toggleDriver()" >Next </button>
+          <button type="button"(click)="toggleDriver()" class="next">Next </button>
         </div>
         <div class="drivers" [@driverInfo]="driverState">
           <h4 class="ui dividing header">Add Drivers</h4>
@@ -439,10 +439,10 @@
               </select>
             </div>
             <div class="add-driver">
-              <h3>Add Another Driver</h3>
               <div class="add" (click)="addDriver()">
                 <h1>+</h1>
               </div>
+              <h3>Add Another Driver</h3>
             </div>
             <div *ngIf="this.auto_service.drivers.length >= 1" class="ui table purple">
               <table class="ui tablet stackable table">
@@ -466,13 +466,13 @@
                     <td>{{driver.driver_license_number}}</td>
                     <td>{{driver.driver_license_state}}</td>
                     <td>{{driver.tickets_accidents_last_five_years}}</td>
-                    <td class="right aligned"><button class="table-button">Edit</button><button class="table-button">Delete</button></td>
+                    <td class="right aligned"><button class="table-button">Edit</button><button class="table-button" (click)="destroy(driver)">Delete</button></td>
                   </tr>
                 </tbody>
               </table>
             </div>
             <button type="button"(click)="toggleDriver()" >Previous </button>
-            <button type="button"(click)="toggleCar()" >Next </button>
+            <button type="button"(click)="toggleCar()" class="next">Next </button>
           </div>
         <div class="cars" [@carInfo]="carState">
           <h3>Add a Vehicle</h3>

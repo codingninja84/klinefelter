@@ -14,8 +14,18 @@ i:hover {
 }
 
 
-.gear3 {
+.gears {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
 
+.small-gears {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .column, .title {
@@ -50,7 +60,6 @@ i:hover {
   background-color: rgba(0,0,0,0.7);
 }
 
-/* The Close Button */
 .close {
     color: #ddd;
     position: absolute;
@@ -66,8 +75,8 @@ i:hover {
     color: red;
     font-size: 5rem;
     font-weight: bold;
-    -ms-transform: rotate(360deg); /* IE 9 */
-    -webkit-transform: rotate(360deg); /* Chrome, Safari, Opera */
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
 }
 

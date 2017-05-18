@@ -88,11 +88,17 @@
           <h1 class="title">TACOMA'S</h1>
           <h3> INSURANCE BROKER</h3>
         </div>
-        <div class="play">
+        <div class="play" (click)="toggleVideo()">
           <img src="/assets/play.png" alt="Play Video" class="play-icon">
         </div>
       </div>
       <div class="triangle"></div>
     </div>
+  </div>
+  <div class="modal" [@modal]="modalState">
+    <div class="modal-content">
+      <iframe  class="video" src="https://www.youtube.com/embed/XyNlqQId-nk" frameborder="0" allowfullscreen></iframe>
+    </div>
+    <span class="close" (click)="toggleVideo()">&times;</span>
   </div>
 </div>

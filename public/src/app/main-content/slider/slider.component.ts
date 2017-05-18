@@ -9,7 +9,6 @@ import { Component,  OnInit, trigger, state, style, transition, animate } from '
     trigger('column', [
      state('left', style({
        transform: "translateX(-100%)",
-       animationFillMode: "forwards"
      })),
      state('right', style({
        transform: "translateX(100%)",

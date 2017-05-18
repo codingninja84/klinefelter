@@ -20,6 +20,8 @@ p, h1, h2, h3 {
 }
 
 
+
+
 .top-bar {
   display: inline-flex;
   align-items: center;
@@ -241,4 +243,52 @@ i, .contact a {
 
 .play:hover {
   border-color: var(--purple);
+}
+
+.modal-content {
+    background-color: transparent;
+    margin: 5% auto;
+    padding: 5%;
+    border: 1px solid #888;
+    width: 80vw;
+    height: 80vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.modal {
+  position: fixed;
+  z-index: 5;
+  left: 0%;
+  top: 0%;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.7);
+}
+
+.video {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.close {
+    color: #ddd;
+    position: absolute;
+    top: 2%;
+    right:2%;
+    font-size: 5rem;
+    font-weight: bold;
+    transition: transform 1s;
+}
+.close:hover, .close:focus {
+    text-decoration: none;
+    cursor: pointer;
+    color: red;
+    font-size: 5rem;
+    font-weight: bold;
+    -ms-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
 }

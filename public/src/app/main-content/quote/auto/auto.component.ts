@@ -91,14 +91,17 @@ export class AutoComponent implements OnInit {
 
 
   create(postData){
-  console.log("in component")
   postData.value.drivers = this.auto_service.drivers
   this.quote_service.createQuote(postData)
   .then((data) => {
     console.log("Success in component", data)
   })
   .catch(err => console.log(err))
-}
+  }
+
+  destroy(driver){
+  this.auto_service.destroy(driver);
+  }
 
 
 //animation functions
@@ -114,19 +117,16 @@ export class AutoComponent implements OnInit {
 
   toggleInsurance(){
     this.insuranceState = this.insuranceState === 'inactive' ? 'active' : 'inactive';
-    console.log(this.insuranceState)
+
   }
 
   toggleDriver(){
     this.driverState = this.driverState === 'inactive' ? 'active' : 'inactive';
-    console.log(this.driverState)
     this.toggleInsurance()
   }
   toggleCar(){
     this.driverState = this.driverState === 'inactive' ? 'active' : 'inactive';
     this.carState = this.carState === 'inactive' ? 'active' : 'inactive';
-    console.log(this.carState)
-
   }
 
 

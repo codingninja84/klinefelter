@@ -21,15 +21,16 @@
 }
 
 .add {
+  margin: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-size: 100% 200%;
-  background-image: linear-gradient(to bottom, var(--purple) 50%, #2C2B3C 50%);
-  transition: background-position 300ms 200ms,  transform 200ms;
-  height: 4rem;
-  width: 4rem;
+  background-color: var(--purple);
+  transform : 200ms;
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
+  border: none;
   color: white;
   box-shadow: .3rem .5rem .75rem #333;
   -webkit-box-shadow: .3rem .5rem .75rem #333;
@@ -43,14 +44,16 @@
 
 
 .add:hover {
-  background-position: 0 -100%;
   transform-origin: center;
   transform: scale(1.05,1.05);
   cursor: pointer;
 }
 
 .add-driver {
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
 
 button {
@@ -81,4 +84,8 @@ button {
 
 button:hover, table-button:hover {
   background-position: right bottom;
+}
+
+.next {
+  float: right;
 }
