@@ -1,18 +1,11 @@
 i {
   font-size: 3rem;
   color: #2C2B3C;
-  background-size: 100% 200%;
-  background-image: linear-gradient(to bottom, transparent 50%, rgba(142,148,242, 1) 50%);
-  transition: background-position 2s, color 1s, transform 2s;
 }
 
-
-i:hover {
-  color: white;
-  transform: rotate(360deg);
-  background-position: 0 -100%;
+.gear {
+  display: inline-flex;
 }
-
 
 .gears {
   display: flex;
@@ -21,11 +14,8 @@ i:hover {
   flex-direction: row;
 }
 
-.small-gears {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.small-gear h5 {
+  margin: .5rem;
 }
 
 .column, .title {
@@ -51,7 +41,7 @@ i:hover {
 
 .modal {
   position: fixed;
-  z-index: 2;
+  z-index: 5;
   left: 0%;
   top: 0%;
   width: 100vw;

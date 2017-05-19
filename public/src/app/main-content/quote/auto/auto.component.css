@@ -3,6 +3,7 @@
   text-align: center;
 }
 
+
 .progress {
   margin-top: 0px;
   display: flex;
@@ -17,7 +18,15 @@
 }
 
 .active {
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid tomato;
+}
+
+.final {
+  color: #333;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .add {
@@ -82,7 +91,21 @@ button {
   transition: background-position 200ms;
 }
 
-button:hover, table-button:hover {
+.submit {
+
+    height: 4rem;
+    width: 12rem;
+    color: white;
+    border: none;
+    font-size: 1.5rem;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, var(--purple) 50%, #303030 50%);
+    background-position: left bottom;
+    transition: background-position 200ms;
+
+}
+
+button:hover, table-button:hover, .submit:hover {
   background-position: right bottom;
 }
 

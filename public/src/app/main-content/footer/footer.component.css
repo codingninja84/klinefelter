@@ -16,7 +16,7 @@ button:hover {
 }
 
 .main-container {
-  height: 50vh;
+  height: 40vh;
   width: 100vw;
 }
 
@@ -65,6 +65,7 @@ a:hover {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  text-align: center;
   height: 90%;
   width: 25%;
 }
@@ -76,4 +77,8 @@ a:hover {
 
 .form {
   margin-bottom: 1rem;
+}
+
+.logo {
+  width: 50%;
 }

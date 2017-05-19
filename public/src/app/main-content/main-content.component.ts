@@ -1,5 +1,6 @@
 import { Component,  OnInit, trigger, state, style, transition, animate } from '@angular/core';
 
+
 @Component({
   selector: 'app-main-content',
   templateUrl: './main-content.component.html',
@@ -51,6 +52,7 @@ export class MainContentComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+
   }
 
   toggleRefer(){

@@ -18,11 +18,10 @@ import { Component,  OnInit, trigger, state, style, transition, animate } from '
  ]),
  trigger('moveGear', [
   state('inactive', style({
-    color: "tomato"
+
   })),
   state('active', style({
-    color: "blue",
-    transform: "rotate(1080deg)"
+    transform: "rotate(1080deg)",
   })),
   transition('inactive => active', animate('5000ms ease-in-out')),
   transition('active => inactive', animate('100ms ease-in-out')),
@@ -44,7 +43,7 @@ export class QuoteComponent implements OnInit {
   }
 
   moveGears(){
-    this.gears = this.gears === 'inactive' ? 'active' : 'inactive';
+    this.gears = 'active';
   }
 
 }

@@ -18,6 +18,7 @@ import { HeaderComponent } from './main-content/header/header.component';
 import { QuoteService } from './main-content/quote/quote.service';
 import { FooterComponent } from './main-content/footer/footer.component';
 import { AutoQuoteService } from './main-content/quote/auto/autoquote.service';
+import { WindowRef } from './main-content/quote/auto/window-ref'
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,7 @@ import { AutoQuoteService } from './main-content/quote/auto/autoquote.service';
     HttpModule,
     BrowserAnimationsModule
   ],
-  providers: [QuoteService, AutoQuoteService],
+  providers: [QuoteService, AutoQuoteService, WindowRef],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,17 +1,18 @@
-<div class="ui grid">
-  <div  class="two wide column">
-    <button (click)="toggleLeft()" type="button" class="ui button left"name="button"></button>
+<div class="row">
+  <div  class="arrow">
+    <h2><i (click)="toggleLeft()" class="chevron left icon"></i></h2>
   </div>
-  <div [@column]="leftState" class="three wide column">
+  <div [@column]="leftState" class="column">
+    <img src="" alt="">
   </div>
-  <div [@column]="leftState" class="three wide column">
+  <div [@column]="leftState" class="column">
   </div>
-  <div [@column]="leftState" class="three wide column">
+  <div [@column]="leftState" class="column">
   </div>
-  <div [@column]="leftState" class="three wide column">
+  <div [@column]="leftState" class="column">
   </div>
-  <div  class="two wide column">
-      <button type="button" class="ui button right"name="button" (click)="toggleRight()"></button>
+  <div  class="arrow">
+      <h2><i (click)="toggleRight()" class="chevron right icon"></i></h2>
   </div>
 </div>
 <div class="triangle-down"></div>

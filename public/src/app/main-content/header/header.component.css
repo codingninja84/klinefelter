@@ -65,9 +65,9 @@ p, h1, h2, h3 {
 .hero {
   height: 100vh;
   color: white;
-  background-image: url("/assets/images.jpg");
+  background-image: url("/assets/Group.jpg");
   background-attachment: fixed;
-  background-position: center;
+  background-position: top;
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -109,12 +109,12 @@ i, .contact a {
   height: 10vh;
   position: absolute;
   z-index: 3;
-  background: rgba(55,55,55,.29);
+  background: rgba(55,55,55,.60);
   box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px 0px;
 }
 
 .menu-div:hover {
-  background: rgba(55,55,55,.50);
+  background: rgba(55,55,55,.70);
 }
 
 .nav-menu {

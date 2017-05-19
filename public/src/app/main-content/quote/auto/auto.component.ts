@@ -2,6 +2,7 @@ import { Component,  OnInit, trigger, state, style, transition, animate, AfterVi
 import { QuoteService} from '../quote.service'
 import { AutoQuoteService} from './autoquote.service'
 import { Driver } from './driver'
+import {WindowRef} from './window-ref';
 @Component({
   selector: 'app-auto',
   templateUrl: './auto.component.html',
@@ -55,6 +56,18 @@ trigger('carInfo', [
  transition('active => inactive', animate('1000ms ease-in-out')),
 
 ]),
+trigger('final', [
+ state('active', style({
+   display: "flex",
+ })),
+ state('inactive', style({
+   transform: "translateX(-150%)",
+   display : "none"
+ })),
+ transition('inactive => active', animate('800ms 1000ms ease-in-out')),
+ transition('active => inactive', animate('1000ms ease-in-out')),
+
+]),
  ]
 })
 export class AutoComponent implements OnInit {
@@ -66,11 +79,13 @@ export class AutoComponent implements OnInit {
   driver_license_state = "";
   tickets_accidents_last_five_years = "";
 
-  constructor(private quote_service: QuoteService, private auto_service: AutoQuoteService) { }
+  constructor(private quote_service: QuoteService, private auto_service: AutoQuoteService, private winRef: WindowRef) { }
 
 
 
   ngOnInit() {
+      console.log(this.winRef)
+      console.log(this.winRef.nativeWindow)
   }
 
   clearDriver(){
@@ -109,11 +124,12 @@ export class AutoComponent implements OnInit {
   insuranceState = "inactive";
   driverState = "inactive";
   carState = "inactive";
+  finalState = "inactive";
 
   toggleInfo(){
     this.infoState = this.infoState === 'active' ? 'inactive' : 'active';
     this.toggleInsurance()
-  }
+    }
 
   toggleInsurance(){
     this.insuranceState = this.insuranceState === 'inactive' ? 'active' : 'inactive';
@@ -124,9 +140,15 @@ export class AutoComponent implements OnInit {
     this.driverState = this.driverState === 'inactive' ? 'active' : 'inactive';
     this.toggleInsurance()
   }
+
   toggleCar(){
     this.driverState = this.driverState === 'inactive' ? 'active' : 'inactive';
     this.carState = this.carState === 'inactive' ? 'active' : 'inactive';
+  }
+
+  toggleFinal(){
+    this.carState = this.carState === 'inactive' ? 'active' : 'inactive';
+    this.finalState = this.finalState === 'inactive' ? 'active' : 'inactive';
   }
 
 
