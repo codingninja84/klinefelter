@@ -45,7 +45,7 @@ module.exports = (function(){
 
       let mailOptions = {
         from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
-        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com',
+        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com, abshirm@live.com',
         subject: 'New Quote Request',
         // text: "Name: " + newAutoQuote.first_name,
         html: "" + html_content + ""
@@ -86,7 +86,7 @@ module.exports = (function(){
 
       let mailOptions = {
         from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
-        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com',
+        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com, abshirm@live.com',
         subject: 'New Quote Request',
         // text: "Name: " + newAutoQuote.first_name,
         html: "" + html_content + ""
@@ -123,7 +123,7 @@ module.exports = (function(){
 
       let mailOptions = {
         from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
-        to: 'ianvtseng@gmail.com, rhanna1621@hotmail.com',
+        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com, abshirm@live.com',
         subject: 'New Quote Request',
         text: "This is the form data placeholder",
       };
@@ -159,7 +159,7 @@ module.exports = (function(){
 
       let mailOptions = {
         from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
-        to: 'ianvtseng@gmail.com, rhanna1621@hotmail.com',
+        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com, abshirm@live.com',
         subject: 'New Quote Request',
         text: "This is the form data placeholder",
       };
