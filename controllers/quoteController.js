@@ -1,4 +1,3 @@
-var nodemailer = require('nodemailer')
 var mongoose = require('mongoose')
 var Schema = mongoose.Schema
 var Auto = mongoose.model('Auto')
@@ -6,65 +5,24 @@ var Commercial = mongoose.model('Commercial')
 var Home = mongoose.model('Home')
 var Life = mongoose.model('Life')
 
+var autoform = require('./mailContent/autoQuote.js')
+var commercialform = require('./mailContent/commercialQuote.js')
+var homeform = require('./mailContent/homeQuote.js')
+var lifeform = require('./mailContent/lifeQuote.js')
+
+var emailHandler = require('./mailcontent/emailHandler.js')
+
 module.exports = (function(){
   return {
     auto: function(req, res) {
       var newAutoQuote = new Auto(req.body)
-
-      console.log("newAutoQuote stuff: " + newAutoQuote)
-      // console.log("req.body: " + req.body)
-      // console.log("req.body.params: " + req.body.params)
-      // console.log("req.body.drivers: " + req.body.drivers)
-      // console.log("req.params.drivers: " + req.params.drivers)
-      // console.log("NewAutoQuote: " + newAutoQuote.drivers)
-
-      for (var i = 0; i < newAutoQuote.drivers.length; i++) {
-        console.log("Driver!!!: " + newAutoQuote.drivers[i])
-      }
-
-      let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        host: "smtp.gmail.com",
-        auth: {
-          user: 'klinefelter.quote.request@gmail.com',
-          pass: 'password12345'
-        }
-      });
-
-      var drivers_string = ""
-      for (var i = 0; i < newAutoQuote.drivers.length; i++) {
-        if (i == 0) {
-          drivers_string += "<p>Primary Driver:</p><li>Driver name: " + newAutoQuote.drivers[i].driver_name + "</li><li>Driver birthday: " + newAutoQuote.drivers[i].driver_bday + "</li><li>Driver license number: " + newAutoQuote.drivers[i].driver_license_number + "</li><li>Driver license state: " + newAutoQuote.drivers[i].driver_license_state + "</li><li>Driver accidents in the last 5 years?: " + newAutoQuote.drivers[i].tickets_accidents_last_five_years + "</l1>"
-        } else {
-          drivers_string += "<p>Other Driver</p><li>Driver name: " + newAutoQuote.drivers[i].driver_name + "</li><li>Driver birthday: " + newAutoQuote.drivers[i].driver_bday + "</li><li>Driver license number: " + newAutoQuote.drivers[i].driver_license_number + "</li><li>Driver license state: " + newAutoQuote.drivers[i].driver_license_state + "</li><li>Driver accidents in the last 5 years?: " + newAutoQuote.drivers[i].tickets_accidents_last_five_years + "</l1>"
-        }
-      }
-      console.log("Drivers String after pop: " + drivers_string)
-
-      var html_content = '<body><h1>Auto Insurance Quote Request</h1><hr><p>First Name: '  + newAutoQuote.first_name + '</p><p>Last Name: ' + newAutoQuote.last_name + '</p><p>Address: ' + newAutoQuote.address + ' ' + newAutoQuote.apt_num + ' ' + newAutoQuote.city + ', ' + newAutoQuote.state + '</p><p>Phone Number: ' + newAutoQuote.phone_number + '</p><p>Email Address: ' + newAutoQuote.email_address + '</p><p>Previous Address: ' + newAutoQuote.pre_address + ' ' + newAutoQuote.pre_apt_num + ' ' + newAutoQuote.pre_city + ', ' + newAutoQuote.pre_state + '</p><p>Insured?: ' + newAutoQuote.insured + ' </p><p>Current Insurance: ' + newAutoQuote.current_insurance + '</p></p>Other Insurance: ' + newAutoQuote.other_insurance + '</p><p>Policy Expiration: ' + newAutoQuote.policy_expiration + '</p><p>Premium: ' + newAutoQuote.premium + '</p></p>Cancelled or renewed insurance in the last three years?: ' + newAutoQuote.cancelled_or_renewed_last_three_years + '</p><p>Rent or own home: ' + newAutoQuote.rent_or_own_home + '</p><p>Bodily injuary liability: ' + newAutoQuote.bodily_injury_liability + '</p><p>Property Damange Liability: ' + newAutoQuote.property_damage_liabilty + '</p><p>Medical Payments: ' + newAutoQuote.medical_payments + '</p><p>Uninsured Motorist Liability: ' + newAutoQuote.uninsured_motorist_liability + '</p><p>Uninsured Motorist Property: ' + newAutoQuote.uninsured_motorist_property + '</p><p>Underinsured Motorist Liability: ' + newAutoQuote.underinsured_motorist_liability + '</p><p>Underinsured Motorist Property: ' + newAutoQuote.underinsured_motorist_property + '</p><p>Comprehensive Deductible: ' + newAutoQuote.comprehensive_deductible + '</p><p>Collision Deductible: ' + newAutoQuote.collision_deductible + '</p>' + drivers_string + '<p>Vehicle Year: ' + newAutoQuote.vehicle_one_year + '</p><p>Vehicle Make: ' + newAutoQuote.vehicle_one_make + '</p><p>Vehicle Model: ' + newAutoQuote.vehicle_one_model + '</p><p>Vehicle Annual Miles: ' + newAutoQuote.vehicle_one_annual_miles + '</p><p>Vehicle VIN: ' + newAutoQuote.vehicle_one_vin + '</p> </body>'
-
-      let mailOptions = {
-        from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
-        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com, abshirm@live.com',
-        subject: 'New Quote Request',
-        // text: "Name: " + newAutoQuote.first_name,
-        html: "" + html_content + ""
-      };
-
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-      });
+      var html_auto = autoform.autoquote(newAutoQuote)
+      emailHandler.sendEmail(html_auto)
 
       newAutoQuote.save(function(err, data) {
-        console.log("Inside the save function.")
         if (err) {
           console.log(err)
-          console.log("Error saving Auto Quote")
         } else {
-          console.log("New Auto Quote Saved")
           res.json(data)
         }
       })
@@ -72,32 +30,8 @@ module.exports = (function(){
 
     commercial: function(req, res) {
       var newCommericalQuote = new Commercial(req.body)
-
-      let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        host: "smtp.gmail.com",
-        auth: {
-          user: 'klinefelter.quote.request@gmail.com',
-          pass: 'password12345'
-        }
-      });
-
-      var html_content = '<body><h1>Commerical Insurance Quote Request</h1><hr><p>Contact Name: ' + newCommericalQuote.contact_name +  '</p><p>Business Name: ' + newCommericalQuote.business_name + '</p><p>Physical Address: ' + newCommericalQuote.physical_address + '</p><p>Mailing Address: ' + newCommericalQuote.mailing_address + '</p><p>Phone Number: '+ newCommericalQuote.phone_number + '</p><p>Alternate Phone Number: ' + newCommericalQuote.alt_phone_number + '</p><p>Fax Number: ' + newCommericalQuote.fax_number + '</p><p>Email Address: '+ newCommericalQuote.email_address + '</p><p>Current Insurance: ' + newCommericalQuote.current_insurance + '</p><p>Limit Requested: ' + newCommericalQuote.limit_requested + '</p><p>Needed Commercial Coverage: ' + newCommericalQuote.needed_commercial_coverage + '</p><p>Number of FTE: ' + newCommericalQuote.num_full_time_employees + '</p><p>Number of PTE: ' + newCommericalQuote.num_part_time_employees + '</p><p>Number of years in business: ' + newCommericalQuote.num_years_in_business + '</p><p>Business and Client Description: ' + newCommericalQuote.business_and_client_description + '</p><p>Annual Gross Sales: ' + newCommericalQuote.annual_gross_sales + '</p><p>Annual Payroll: ' + newCommericalQuote.annual_payroll + '</p><p>Cost of Subcontractor Work: ' + newCommericalQuote.cost_subcontractor_work + '</p><p>Claims in the last five years: ' + newCommericalQuote.claims_last_five_years + '</p><p>Claims Description: ' + newCommericalQuote.claims_description + '</p><p>Own or rent?: ' + newCommericalQuote.own_or_rent + '</p><p>Year build: ' + newCommericalQuote.year_build + '</p><p>Percent Occupied: ' + newCommericalQuote.percent_occupied + '</p><p>Sprinklers: ' + newCommericalQuote.sprinklers + '</p><p>Construction Type: ' + newCommericalQuote.construction_type + '</p><p>Store: ' + newCommericalQuote + '</p><p>Basement: ' + newCommericalQuote.basement + '</p><p>Square Footage: ' + newCommericalQuote.square_footage + '</p><p>Alarm: ' + newCommericalQuote.alarm + '</p><p>Building Value: ' + newCommericalQuote.building_value + '</p><p>Contents Value: ' + newCommericalQuote.contents_value + '</p><p>Other info: ' + newCommericalQuote.other_info + '</p></body>'
-
-      let mailOptions = {
-        from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
-        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com, abshirm@live.com',
-        subject: 'New Quote Request',
-        // text: "Name: " + newAutoQuote.first_name,
-        html: "" + html_content + ""
-      };
-
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-      });
+      var html_commercial = commercialform.commercialquote(newCommericalQuote)
+      emailHandler.sendEmail(html_commercial)
 
       newCommericalQuote.save(function(err, data) {
         if (err) {
@@ -109,31 +43,11 @@ module.exports = (function(){
         }
       })
     },
+
     home: function(req, res) {
       var newHomeQuote = new Home(req.body)
-
-      let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        host: "smtp.gmail.com",
-        auth: {
-          user: 'klinefelter.quote.request@gmail.com',
-          pass: 'password12345'
-        }
-      });
-
-      let mailOptions = {
-        from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
-        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com, abshirm@live.com',
-        subject: 'New Quote Request',
-        text: "This is the form data placeholder",
-      };
-
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-      });
+      var html_home = homeform.homequote(newHomeQuote)
+      emailHandler.sendEmail(html_home)
 
       newHomeQuote.save(function(err, data) {
         if (err) {
@@ -145,31 +59,11 @@ module.exports = (function(){
         }
       })
     },
+
     life: function(req, res) {
       var newLifeQuote = new Life(req.body)
-
-      let transporter = nodemailer.createTransport({
-        service: 'gmail',
-        host: "smtp.gmail.com",
-        auth: {
-          user: 'klinefelter.quote.request@gmail.com',
-          pass: 'password12345'
-        }
-      });
-
-      let mailOptions = {
-        from: '"Quote Request" <klinefelter.quote.request@gmail.com>',
-        to: 'ianvtseng@gmail.com, rhanna1461@hotmail.com, abshirm@live.com',
-        subject: 'New Quote Request',
-        text: "This is the form data placeholder",
-      };
-
-      transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-          return console.log(error);
-        }
-        console.log('Message %s sent: %s', info.messageId, info.response);
-      });
+      var html_life = lifeform.lifequote(newLifeQuote)
+      emailHandler.sendEmail(html_life)
 
       newLifeQuote.save(function(err, data) {
         if (err) {
