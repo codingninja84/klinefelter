@@ -23,154 +23,232 @@ button:hover {
   background-position: right bottom;
 }
 
-
-.savings {
-  position: relative;
-  margin: 0px;
-  color: #ddd;
-  width: 100vw;
-  height: 15vh;
-  background-color: #2C2B3C;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.savings h1 {
-  font-size: 3rem;
-  font-family: 'lato', sans-serif;
-  font-weight: 700;
-}
-
-
-.column1, .column2 {
-  flex-direction: column;
-  margin: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.testimony {
-    padding: 5%;
-    position: relative;
+@media screen and (max-width: 700px) {
+  .marketing {
+    height: 80vh;
+    display: flex;
+    align-items: center;
     text-align: center;
-    height: 70vh;
-    width: 100%;
-    color: white;
-    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), rgba(0,0,0,255.55) url('/assets/tacoma.jpg');
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    padding: 1rem;
+  }
 
-.testimony h1 {
-  font-size: 3.5rem;
-}
-
-
-.blog {
-  height: 50vh;
-  display: flex;
-  margin-bottom: 2rem;
-}
-
-.left-blog {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  width: 50%;
-  background-color: #2C2B3C;
-  color: #ddd;
-}
-
-.right-blog {
-  display: inline-flex;
-  position: relative;
-  height: 100%;
-  width: 50%;
-  background-color: #f2f2f2;
-
-}
-
-.right-blog-text {
-  margin-left: 10vh;
-  width: 75%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.triangle-side{
-  width: 0;
-  height: 0;
-  border-top: 10vh solid transparent;
-  border-bottom: 40vh solid transparent;
-  border-left: 10vh solid #2C2B3C;
-
-}
-
-
-.triangle-down{
-    overflow: hidden;
+  .marketing-triangle-left {
     position: absolute;
-    left:20%;
+    bottom: 0;
+    left: 0;
+    z-index: -9999;
+    overflow: hidden;
     width: 0;
     height: 0;
-    border-top: 5vh solid #2C2B3C;
-    border-right: 3vh solid transparent;
-    border-left: 7vh solid transparent;
+
+  }
+
+  .marketing-triangle-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -9999;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+  }
+
+  .blog {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+    background-color: #2C2B3C;
+    color: #ddd;
+    padding: .5rem;
+  }
+
+  .right-blog {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    height: 50%;
+    width: 100%;
+    background-color: #ffffff;
+    padding: .5rem;
+  }
+
+  .triangle-side{
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    border-top: 7vw solid #2C2B3C;
+    border-left: 50vw solid transparent;
+    border-right: 20vw solid transparent;
+    overflow: hidden;
+  }
 }
 
 
-.more {
-  position: absolute;
-  bottom: 15%;
-}
+@media screen and (min-width: 900px){
+  .savings {
+    position: relative;
+    margin: 0px;
+    color: #ddd;
+    width: 100vw;
+    height: 15vh;
+    background-color: #2C2B3C;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.marketing {
-  height: 60vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: relative;
-}
-
-.marketing-triangle-left {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -9999;
-  overflow: hidden;
-  width: 0;
-  height: 0;
-
-}
-
-.marketing-triangle-right {
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  z-index: -9999;
-  overflow: hidden;
-  width: 0;
-  height: 0;
-}
+  .savings h1 {
+    font-size: 3rem;
+    font-family: 'lato', sans-serif;
+    font-weight: 700;
+  }
 
 
-.referral-line {
-  height: .5rem;
-  background-color: var(--purple);
-  border: none;
-  border-radius: 5px;
-  margin-bottom: 1rem;
-}
+  .column1, .column2 {
+    flex-direction: column;
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-.referral-text {
-  width: 50%;
-  text-align: center;
+  .testimony {
+      padding: 5%;
+      position: relative;
+      text-align: center;
+      height: 70vh;
+      width: 100%;
+      color: white;
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), rgba(0,0,0,255.55) url('/assets/tacoma.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+  }
+
+  .testimony h1 {
+    font-size: 3.5rem;
+  }
+
+
+  .blog {
+    height: 50vh;
+    display: flex;
+    margin-bottom: 2rem;
+  }
+
+  .left-blog {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 50%;
+    background-color: #2C2B3C;
+    color: #ddd;
+  }
+
+  .right-blog {
+    display: inline-flex;
+    position: relative;
+    height: 100%;
+    width: 50%;
+    background-color: #f2f2f2;
+
+  }
+
+  .right-blog-text {
+    margin-left: 10vh;
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .triangle-side{
+    width: 0;
+    height: 0;
+    border-top: 10vh solid transparent;
+    border-bottom: 40vh solid transparent;
+    border-left: 10vh solid #2C2B3C;
+
+  }
+
+
+  .triangle-down{
+      overflow: hidden;
+      position: absolute;
+      left:20%;
+      width: 0;
+      height: 0;
+      border-top: 5vh solid #2C2B3C;
+      border-right: 3vh solid transparent;
+      border-left: 7vh solid transparent;
+  }
+
+
+  .more {
+    position: absolute;
+    bottom: 15%;
+  }
+
+  .marketing {
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .marketing-triangle-left {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -9999;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+
+  }
+
+  .marketing-triangle-right {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: -9999;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+  }
+
+
+  .referral-line {
+    height: .5rem;
+    background-color: var(--purple);
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 1rem;
+  }
+
+  .referral-text {
+    width: 50%;
+    text-align: center;
+  }
 }
