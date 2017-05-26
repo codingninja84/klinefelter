@@ -1,7 +1,4 @@
 
-
-
-
 .gap {
   height: 10%;
   width: 100%;
@@ -88,14 +85,28 @@ button:hover {
   }
 
   .triangle-side{
+    position: absolute;
     width: 0;
     height: 0;
-    position: absolute;
     top: 0;
     border-top: 7vw solid #2C2B3C;
     border-left: 50vw solid transparent;
     border-right: 20vw solid transparent;
     overflow: hidden;
+  }
+
+  .testimony {
+      padding: 10%;
+      position: relative;
+      text-align: center;
+      height: auto;
+      width: 100%;
+      color: white;
+      background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), rgba(0,0,0,255.55) url('/assets/tacoma.jpg');
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
   }
 }
 
