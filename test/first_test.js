@@ -2,7 +2,7 @@ var chai = require("chai");
 var expect = chai.expect;
 
 describe("Mocha", function () {
-    it("runs correctly", function () {
+    xit("runs correctly", function () {
         expect("hello").to.equal("hello");
         expect("hello").to.not.equal("goodbye");
         expect(24).to.be.below(25);
