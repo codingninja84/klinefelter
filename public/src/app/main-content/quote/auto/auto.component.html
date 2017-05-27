@@ -184,7 +184,7 @@
             <input type="text" name="email_address" [(ngModel)]="email_address" placeholder="">
           </div>
         </div>
-        <a href="/#progress"><button type="button"(click)="toggleInfo()" class="next">Next </button></a>
+        <a href="/#progress"><button id="next1" type="button"(click)="toggleInfo()" class="next">Next </button></a>
       </div>
       <div class="insurance" [@insuranceInfo]="insuranceState">
         <h3>Are you currently insured?</h3>
@@ -353,8 +353,8 @@
             </select>
           </div>
         </div>
-        <a href="/#progress"><button type="button"(click)="toggleInfo()" >Previous </button></a>
-        <a href="/#progress"><button type="button"(click)="toggleDriver()" class="next">Next </button></a>
+        <a href="/#progress"><button  type="button"(click)="toggleInfo()" >Previous </button></a>
+        <a href="/#progress"><button id="next2" type="button"(click)="toggleDriver()" class="next">Next </button></a>
       </div>
       <div class="drivers" [@driverInfo]="driverState">
         <h4 class="ui dividing header">Add Drivers</h4>
@@ -473,7 +473,7 @@
             </table>
           </div>
           <a href="/#progress"><button type="button"(click)="toggleDriver()" >Previous </button></a>
-          <a href="/#progress"><button type="button"(click)="toggleCar()" class="next">Next </button></a>
+          <a href="/#progress"><button id="next3" type="button"(click)="toggleCar()" class="next">Next </button></a>
         </div>
       <div class="cars" [@carInfo]="carState">
         <h3>Add a Vehicle</h3>
@@ -502,7 +502,7 @@
           </div>
         </div>
         <a href="/#progress"><button type="button"(click)="toggleCar()" >Previous </button></a>
-        <input class="submit next"  type="submit" name="submit" value="submit" (click)="toggleFinal()">
+        <input id="submit1" class="submit next"  type="submit" name="submit" value="submit" (click)="toggleFinal()">
       </div>
       <div class="final" [@final]="finalState">
         <h1> Thank you {{first_name}},</h1>
