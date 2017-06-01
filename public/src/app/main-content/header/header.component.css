@@ -4,63 +4,8 @@ p, h1, h2, h3 {
 }
 
 .contain {
-  font-size: 12px;
+  font-size: 16px;
 }
-
-@media screen and (min-width: 900px) {
-
-
-
-}
-
-@media screen and (min-width: 1200px) {
-
-    font-size: 16px;
-
-}
-
-
-
-
-.top-bar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  margin: 0px;
-}
-
-.top-elements {
-  padding: 0px .5rem;
-}
-
-
-.quote {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  width: 30%;
-  padding: 0;
-
-}
-
-.chat {
-  border-left: 1px solid #ddd;
-}
-
-.location, .contact {
-  display:  inline-flex;
-  align-items: flex-end;
-  justify-content: center;
-  flex-direction: row;
-  font-size: .9rem;
-  width: 35%;
-  height: 100%
-}
-
-
-
-/*colors, fonts, backgrounds*/
 
 .hero {
   height: 100vh;
@@ -72,180 +17,10 @@ p, h1, h2, h3 {
   background-size: cover;
 }
 
-
-.ui.simple.dropdown.item {
-  color: #ddd;
-}
-.compact {
-  height: 100%;
-  background-color: #2C2B3C;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.22rem;
-  font-weight: 400;
-  border-radius: 0;
-}
-
-i, .contact a {
-  color: #ddd;
-}
-
-
-.top-bar {
-  background-color: var(--purple);
-}
-
-.marker, .mail, .call, .comments, .clock {
-  color: #B7C3F3
-}
-
-
-.menu-div {
-  overflow: hidden;
-  padding: 1rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: flex-end;
-  width: 100%;
-  height: 10vh;
-  position: absolute;
-  z-index: 3;
-  background: rgba(55,55,55,.60);
-  box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px 0px;
-}
-
-.menu-div:hover {
-  background: rgba(55,55,55,.70);
-}
-
-.nav-menu {
-  padding-bottom: 1rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-  width: 59%;
-  flex-shrink: 1;
-}
-
-.nav-menu a {
-  color: #ccc;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 1.22rem;
-  font-weight: 600;
-  background-size: 300% 100%;
-  background-image: linear-gradient(to right, transparent 50%, rgba(130, 80, 171, 0.3) 50%);
-  background-position: left bottom;
-  transition: background-position 400ms;
-}
-
-.nav-menu a:hover, .active.item {
-  color: #ddd;
-  background-position: right bottom;
-  cursor: pointer;
-}
-
-.link {
-  padding: 1.5rem;
-}
-
-.social-menu {
-  width: 41%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.social-menu a {
-  padding: 0px 1rem;
-}
-
-.social-icon {
-  background-size: 100% 300%;
-  background-image: linear-gradient(to bottom, transparent 50%, rgba(130, 80, 171, 0.3) 50%);
-  background-position: top;
-  transition: background-position 400ms;
-  font-size: 1.5rem;
-}
-
-.social-icon a:hover {
-  background-position: top;
-  color: var(--purple)
-}
-
-.social-menu a:hover {
-  cursor: pointer;
-}
-
-.left-hero {
-  height: 100%;
-  width: 45%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-
-.hero-text{
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-  background-color: #2C2B3C;
-}
-
-
-.triangle {
-  overflow: hidden;
-  width: 0;
-  height: 0;
-  border-top: 40vw solid transparent;
-  border-bottom: 25vw solid transparent;
-  border-left: 6vw solid #2C2B3C;
-}
-
-
-.title {
-  color: var(--purple);
-  margin-bottom: 0;
-}
-
-.tacoma {
-  text-align: center;
-}
-
-.tacoma h3 {
-  margin: 0;
-}
-
-.logo {
-  width:60%;
-}
-
-.play {
-  margin-top: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 6vw;
-  height: 6vw;
-  border-radius: 50%;
-  border: 2px solid white;
-  position: relative;
-}
-
-.play-icon {
-  position: absolute;
-  height: 65%;
-  width: 65%;
-  right: 10%;
-}
-
-.play:hover {
-  border-color: var(--purple);
-}
-
 .modal-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: transparent;
     margin: 5% auto;
     padding: 5%;
@@ -267,10 +42,334 @@ i, .contact a {
   background-color: rgba(0,0,0,0.7);
 }
 
-.video {
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
+@media screen and (max-width: 900px) {
+
+  .desktop {
+    display: none;
+  }
+
+
+  .hero {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .left-hero {
+    height: 50%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-text{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #2C2B3C;
+  }
+
+  .triangle {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    border-left: 40vh solid transparent;
+    border-right: 25vh solid transparent;
+    border-top: 6vh solid #2C2B3C;
+  }
+
+
+  .title {
+    color: var(--purple);
+    margin-bottom: 0;
+  }
+
+  .tacoma {
+    text-align: center;
+  }
+
+  .tacoma h3 {
+    margin: 0;
+  }
+
+  .logo {
+    width:60%;
+  }
+
+  .play {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10vh;
+    height: 10vh;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: relative;
+  }
+
+  .play-icon {
+    position: absolute;
+    height: 65%;
+    width: 65%;
+    right: 10%;
+  }
+
+  .play:hover {
+    border-color: var(--purple);
+  }
+
+  .video {
+    height: auto;
+    width: 100%;
+    overflow: hidden;
+  }
+
+}
+
+@media screen and (min-width: 900px) {
+
+  .mobile {
+    display: none;
+  }
+
+
+  .top-bar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    margin: 0px;
+  }
+
+  .top-elements {
+    padding: 0px .5rem;
+  }
+
+
+  .quote {
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 30%;
+    padding: 0;
+
+  }
+
+  .chat {
+    border-left: 1px solid #ddd;
+  }
+
+  .location, .contact {
+    display:  inline-flex;
+    align-items: flex-end;
+    justify-content: center;
+    flex-direction: row;
+    font-size: .9rem;
+    width: 35%;
+    height: 100%
+  }
+
+
+  .hero {
+    height: 100vh;
+    color: white;
+    background-image: url("/assets/Group.jpg");
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+  .ui.simple.dropdown.item {
+    color: #ddd;
+  }
+  .compact {
+    height: 100%;
+    background-color: #2C2B3C;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.22rem;
+    font-weight: 400;
+    border-radius: 0;
+  }
+
+  i, .contact a {
+    color: #ddd;
+  }
+
+
+  .top-bar {
+    background-color: var(--purple);
+  }
+
+  .marker, .mail, .call, .comments, .clock {
+    color: #B7C3F3
+  }
+
+
+  .menu-div {
+    overflow: hidden;
+    padding: 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+    height: 10vh;
+    position: absolute;
+    z-index: 3;
+    background: rgba(55,55,55,.60);
+    box-shadow: rgba(0, 0, 0, 0.14902) 0px 1px 3px 0px;
+  }
+
+  .menu-div:hover {
+    background: rgba(55,55,55,.70);
+  }
+
+  .nav-menu {
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    width: 59%;
+    flex-shrink: 1;
+  }
+
+  .nav-menu a {
+    color: #ccc;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.22rem;
+    font-weight: 600;
+    background-size: 300% 100%;
+    background-image: linear-gradient(to right, transparent 50%, rgba(130, 80, 171, 0.3) 50%);
+    background-position: left bottom;
+    transition: background-position 400ms;
+  }
+
+  .nav-menu a:hover, .active.item {
+    color: #ddd;
+    background-position: right bottom;
+    cursor: pointer;
+  }
+
+  .link {
+    padding: 1.5rem;
+  }
+
+  .social-menu {
+    width: 41%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .social-menu a {
+    padding: 0px 1rem;
+  }
+
+  .social-icon {
+    background-size: 100% 300%;
+    background-image: linear-gradient(to bottom, transparent 50%, rgba(130, 80, 171, 0.3) 50%);
+    background-position: top;
+    transition: background-position 400ms;
+    font-size: 1.5rem;
+  }
+
+  .social-icon a:hover {
+    background-position: top;
+    color: var(--purple)
+  }
+
+  .social-menu a:hover {
+    cursor: pointer;
+  }
+
+  .left-hero {
+    height: 100%;
+    width: 45%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .hero-text{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #2C2B3C;
+  }
+
+
+  .triangle {
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    border-top: 40vw solid transparent;
+    border-bottom: 25vw solid transparent;
+    border-left: 6vw solid #2C2B3C;
+  }
+
+
+  .title {
+    color: var(--purple);
+    margin-bottom: 0;
+  }
+
+  .tacoma {
+    text-align: center;
+  }
+
+  .tacoma h3 {
+    margin: 0;
+  }
+
+  .logo {
+    width:60%;
+  }
+
+  .play {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 6vw;
+    height: 6vw;
+    border-radius: 50%;
+    border: 2px solid white;
+    position: relative;
+  }
+
+  .play-icon {
+    position: absolute;
+    height: 65%;
+    width: 65%;
+    right: 10%;
+  }
+
+  .play:hover {
+    border-color: var(--purple);
+  }
+
+
+
+  .video {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+
 }
 
 .close {

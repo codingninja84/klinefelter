@@ -11,7 +11,7 @@ import { Component,  OnInit, trigger, state, style, transition, animate } from '
        display: "none",
      })),
      state('active', style({
-       display : "block",
+       display : "flex",
      })),
      transition('inactive => active', animate('1000ms ease-in-out')),
      transition('active => inactive', animate('100ms ease-in-out')),

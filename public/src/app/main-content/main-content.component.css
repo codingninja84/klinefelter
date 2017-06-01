@@ -20,7 +20,19 @@ button:hover {
   background-position: right bottom;
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 900px) {
+  .savings {
+    margin: 0;
+    color: black;
+    width: 100vw;
+    height: 50vh;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
   .marketing {
     height: 80vh;
     display: flex;
@@ -107,6 +119,10 @@ button:hover {
       background-position: center;
       background-repeat: no-repeat;
       background-size: cover;
+  }
+
+  .triangle-down{
+    display: hidden;
   }
 }
 
