@@ -21,6 +21,11 @@ button:hover {
 }
 
 @media screen and (max-width: 900px) {
+
+  app-slider {
+    display: none;
+  }
+
   .savings {
     margin: 0;
     color: black;
