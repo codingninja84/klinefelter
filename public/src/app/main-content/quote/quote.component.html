@@ -20,7 +20,7 @@
       <h2 class="ui icon header">
       <i class="circular car icon"></i>
         <div class="sub header">Auto Insurance</div>
-          <button type="button" name="auto" (click)="toggleAuto()">Get Quote</button>
+          <button id="autoQuote" type="button" name="auto" (click)="toggleAuto()">Get Quote</button>
       </h2>
     </div>
     <div class="column">
@@ -44,7 +44,7 @@
         <button type="button" name="commercial">Get Quote</button>
       </h2>
     </div>
-  </div>
+    </div>
   </div>
 
   <div class="mobile"(mouseenter)="moveGears()">
@@ -126,7 +126,7 @@
 
   <!-- Modal content -->
   <div class="modal-content ">
-    <span class="close" (click)="toggleAuto()">&times;</span>
+    <span id="close1" class="close" (click)="toggleAuto()">&times;</span>
     <app-auto></app-auto>
   </div>
 
