@@ -31,10 +31,14 @@ import { Component,  OnInit, trigger, state, style, transition, animate } from '
 export class QuoteComponent implements OnInit {
   autoState:string = 'inactive';
   gears:string = 'inactive'
+  height: any;
+  width: any;
   constructor() {}
 
   ngOnInit() {
-
+    this.height = window.innerHeight;
+    this.width = window.innerWidth;
+    console.log(this.width)
   }
 
   toggleAuto(){

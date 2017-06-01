@@ -1,49 +1,123 @@
-<div class="ui raised very padded text container purple segment" (mouseenter)="moveGears()">
-  <div class="ui container title">
-    <h2 class="ui icon header title">
-      <div class="gear">
-        <h1><i [@moveGear]="gears" class="setting icon gear1"></i></h1>
-        <div class="small-gear">
-          <h5><i [@moveGear]="gears" class="setting icon gear2"></i></h5>
-          <h5><i [@moveGear]="gears" class="setting icon gear2"></i></h5>
+<div class="p-container">
+  <div class="ui raised very padded text container purple segment desktop" (mouseenter)="moveGears()">
+    <div class="ui container title">
+      <h2 class="ui icon header title">
+        <div class="gear">
+          <h1><i [@moveGear]="gears" class="setting icon gear1"></i></h1>
+          <div class="small-gear">
+            <h5><i [@moveGear]="gears" class="setting icon gear2"></i></h5>
+            <h5><i [@moveGear]="gears" class="setting icon gear2"></i></h5>
+          </div>
+        </div>
+      <div class="content">
+        Quote Tool
+        <div class="sub header">Quotes from multiple carriers. See how much you will save!</div>
+      </div>
+      </h2>
+    </div>
+    <div class="ui stackable two column grid">
+    <div class="column">
+      <h2 class="ui icon header">
+      <i class="circular car icon"></i>
+        <div class="sub header">Auto Insurance</div>
+          <button type="button" name="auto" (click)="toggleAuto()">Get Quote</button>
+      </h2>
+    </div>
+    <div class="column">
+      <h2 class="ui icon header">
+      <i class="circular home icon"></i>
+        <div class="sub header">Homeowners Insurance</div>
+        <button type="button" name="HomeOwner">Get Quote</button>
+      </h2>
+    </div>
+    <div class="column">
+      <h2 class="ui icon header">
+      <i class="circular child icon"></i>
+        <div class="sub header">Life Insurance</div>
+        <button type="button" name="life">Get Quote</button>
+      </h2>
+    </div>
+    <div class="column">
+      <h2 class="ui icon header">
+        <i class="circular building icon"></i>
+          <div class="sub header">Commercial Insurance</div>
+        <button type="button" name="commercial">Get Quote</button>
+      </h2>
+    </div>
+  </div>
+  </div>
+
+  <div class="mobile"(mouseenter)="moveGears()">
+    <div class="ui container title ">
+      <h2 class="ui icon header title ">
+        <div class="gear ">
+          <h1><i [@moveGear]="gears" class="setting icon gear1 "></i></h1>
+          <div class="small-gear">
+            <h5><i [@moveGear]="gears" class="setting icon gear2 "></i></h5>
+            <h5><i [@moveGear]="gears" class="setting icon gear2 "></i></h5>
+          </div>
+        </div>
+      <div class="content ">
+        Quote Tool
+        <div class="sub header ">Quotes from multiple carriers. See how much you will save!</div>
+      </div>
+      </h2>
+    </div>
+    <div class="grid">
+    <div class="column" click="toggleAuto()" >
+      <h2 class="quote-type">AUTO</h2>
+      <div class="description">
+        <i class="car icon"></i>
+        <h4>Get quotes from multiple carriers and let us find you the best rate!</h4>
+        Click to get started<i class="arrow right icon"></i>
+      </div>
+      <div class="checks">
+        <div class="check-item">
+          <h5>Multi-Driver Discount<i class="circular check icon"></i></h5>
+        </div>
+        <div class="check-item">
+          <h5>Lower Premiums<i class="circular check icon"></i></h5>
         </div>
       </div>
-    <div class="content">
-      Quote Tool
-      <div class="sub header">Quotes from multiple carriers. See how much you will save!</div>
+      <div class="triangle-div-1-1"></div>
+      <div class="triangle-div-1-2"></div>
+      <div class="triangle-div-1-3"></div>
+      <div class="triangle-div-1-4"></div>
     </div>
-    </h2>
+    <div class="column" click="" >
+      <h2 class="quote-type">HOME</h2>
+      <div class="description">
+        <i class="house icon"></i>
+        <h4>Get quotes from multiple carriers and let us find you the best rate!</h4>
+        Click to get started<i class="arrow right icon"></i>
+      </div>
+      <div class="checks">
+        <div class="check-item">
+          <h5>Multiple Coverage Options<i class="circular check icon"></i></h5>
+        </div>
+        <div class="check-item">
+          <h5>Cheaper Rates<i class="circular check icon"></i></h5>
+        </div>
+      </div>
+      <div class="triangle-div-2-1"></div>
+      <div class="triangle-div-2-3"></div>
+    </div>
+    <div class="column ">
+      <h2 class="ui icon header ">
+      <i class="circular child icon "></i>
+        <div class="sub header ">Life Insurance</div>
+        <button type="button" name="life">Get Quote</button>
+      </h2>
+    </div>
+    <div class=" column">
+      <h2 class=" ui icon header">
+        <i class=" circular building icon"></i>
+          <div class=" sub header">Commercial Insurance</div>
+        <button type="button" name="commercial">Get Quote</button>
+      </h2>
+    </div>
   </div>
-  <div class="ui stackable two column grid">
-  <div class="column">
-    <h2 class="ui icon header">
-    <i class="circular car icon"></i>
-      <div class="sub header">Auto Insurance</div>
-        <button type="button" name="auto" (click)="toggleAuto()">Get Quote</button>
-    </h2>
   </div>
-  <div class="column">
-    <h2 class="ui icon header">
-    <i class="circular home icon"></i>
-      <div class="sub header">Homeowners Insurance</div>
-      <button type="button" name="HomeOwner">Get Quote</button>
-    </h2>
-  </div>
-  <div class="column">
-    <h2 class="ui icon header">
-    <i class="circular child icon"></i>
-      <div class="sub header">Life Insurance</div>
-      <button type="button" name="life">Get Quote</button>
-    </h2>
-  </div>
-  <div class="column">
-    <h2 class="ui icon header">
-      <i class="circular building icon"></i>
-        <div class="sub header">Commercial Insurance</div>
-      <button type="button" name="commercial">Get Quote</button>
-    </h2>
-  </div>
-</div>
 </div>
 
 
